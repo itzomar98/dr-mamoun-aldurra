@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mamoun Aldurra - Coming Soon | د. مأمون الدرة</title>
+    <meta name="description"
+        content="Official website of Dr. Mamoun Aldurra. Coming soon. الموقع الرسمي للدكتور مأمون الدرة. قريباً.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0a0e1a;
+            --accent-color: #c9a84c;
+            /* Gold */
+            --text-color: #ffffff;
+            --secondary-text: #b0b0b0;
+            --overlay-color: rgba(5, 8, 20, 0.65);
+            --font-arabic: 'GE SS Two', 'Cairo', sans-serif;
+            --font-english: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-english);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Background Video/Image */
+        #bg-video,
+        #bg-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-color);
+            z-index: -1;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Container */
+        /* Container */
+        .container {
+            text-align: right;
+            padding: 2rem;
+            max-width: 90%;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* Align right */
+            justify-content: center;
+            height: 100vh;
+            padding-right: 5%;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+                /* Slide in from right */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                color: var(--accent-color);
+                text-shadow: none;
+            }
+
+            50% {
+                color: #ffeebb;
+                text-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
+            }
+
+            100% {
+                color: var(--accent-color);
+                text-shadow: none;
+            }
+        }
+
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Logo */
+        .logo-placeholder {
+            margin-bottom: 1rem;
+            animation-delay: 0.2s;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .logo-placeholder img {
+            max-width: 180px;
+            height: auto;
+        }
+
+        /* Decorative Line */
+        .decorative-line {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color));
+            /* Gradient to right */
+            margin: 0.5rem 0 0.5rem auto;
+            /* Align right */
+        }
+
+        /* Main Heading */
+        /* Main Heading */
+        .main-heading {
+            margin: 1rem 0;
+            animation-delay: 0.4s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* Align right */
+        }
+
+        .arabic-name {
+            font-family: var(--font-arabic);
+            font-size: 3.5rem;
+            /* Increased size */
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .english-name {
+            font-family: var(--font-english);
+            font-size: 1.8rem;
+            /* Decreased size */
+            color: var(--text-color);
+            display: block;
+            letter-spacing: 3px;
+            /* Increased spacing */
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2;
+            color: var(--text-color);
+            display: block;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Coming Soon */
+        .coming-soon {
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+            letter-spacing: 0;
+            animation-delay: 0.6s;
+            position: relative;
+            padding: 1rem 0;
+            text-align: right;
+            width: 100%;
+        }
+
+        .coming-soon-text {
+            animation: shimmer 3s infinite ease-in-out;
+            display: flex;
+            flex-direction: row-reverse;
+            /* Arabic First */
+            justify-content: flex-start;
+            /* Start from right (because of row-reverse) */
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cs-arabic {
+            font-family: var(--font-arabic);
+            font-size: 1.6rem;
+            margin-right: 10px;
+            letter-spacing: 0;
+        }
+
+        .cs-english {
+            font-family: var(--font-english);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        /* Countdown Timer */
+        #countdown {
+            display: flex;
+            justify-content: flex-end;
+            /* Align right */
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            animation-delay: 0.8s;
+            direction: ltr;
+            /* Timer stays LTR but aligned right */
+        }
+
+        .time-box {
+            background: rgba(10, 14, 26, 0.8);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 1rem;
+            border-radius: 4px;
+            /* Slightly rounded, still formal */
+            min-width: 100px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .time-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .time-number {
+            font-family: var(--font-english);
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .time-label {
+            font-family: var(--font-english);
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .time-label span {
+            display: block;
+            font-family: var(--font-arabic);
+            font-size: 0.8rem;
+            margin-top: 2px;
+            letter-spacing: 0;
+            opacity: 0.8;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            animation-delay: 1s;
+            justify-content: flex-end;
+            /* Align right */
+            width: 100%;
+        }
+
+        .social-icon {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+        }
+
+        .social-icon:hover {
+            color: #fff;
+            transform: scale(1.15);
+            text-shadow: 0 0 10px var(--accent-color);
+            border-color: rgba(201, 168, 76, 0.5);
+            background: rgba(201, 168, 76, 0.1);
+            box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            opacity: 0.6;
+            animation-delay: 1.2s;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .arabic-name {
+                font-size: 2.5rem;
+            }
+
+            .english-name {
+                font-size: 1.8rem;
+            }
+
+            #countdown {
+                gap: 1rem;
+            }
+
+            .time-box {
+                min-width: 80px;
+                padding: 0.8rem;
+            }
+
+            .time-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #countdown {
+                gap: 0.8rem;
+            }
+
+            .time-box {
+                min-width: 70px;
+                padding: 0.5rem;
+                flex: 1 1 40%;
+                /* 2 per row on very small screens */
+            }
+
+            .main-heading {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Fallback for background video */
+        .no-video-bg {
+            background: radial-gradient(circle at center, #1a2236 0%, #0a0e1a 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline id="bg-video" poster="">
+        <source src="background.mp4" type="video/mp4">
+        <!-- Fallback to GIF if user prefers or MP4 fails -->
+    </video>
+
+    <!-- IF USING GIF INSTEAD, COMMENT OUT ABOVE AND UNCOMMENT BELOW -->
+    <!-- <img src="background.gif" id="bg-gif" alt="Background Animation"> -->
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+
+        <!-- Logo Section -->
+        <div class="logo-placeholder animate-in">
+            <img src="logo.png" alt="Dr. Mamoun Aldurra Logo">
+        </div>
+
+        <div class="decorative-line animate-in" style="animation-delay: 0.3s;"></div>
+
+        <!-- Main Heading -->
+        <div class="main-heading animate-in">
+            <span class="arabic-name">د. مأمون الدرة</span>
+            <span class="english-name">Dr. Mamoun Aldurra</span>
+        </div>
+
+        <div class="decorative-line animate-in" style="animation-delay: 0.5s;"></div>
+
+        <!-- Coming Soon Text -->
+        <div class="coming-soon animate-in">
+            <span class="coming-soon-text">
+                <span class="cs-arabic">قريباً</span>
+                <span class="cs-english">Coming Soon</span>
+            </span>
+        </div>
+
+        <div class="decorative-line animate-in" style="animation-delay: 0.7s;"></div>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="animate-in">
+            <div class="time-box">
+                <span class="time-number" id="days">00</span>
+                <span class="time-label">Days<span>أيام</span></span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">Hours<span>ساعات</span></span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">Minutes<span>دقائق</span></span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">Seconds<span>ثواني</span></span>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons animate-in">
+            <a href="https://www.linkedin.com/in/dr-mamoun-aldurra" target="_blank" class="social-icon"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/963969127243" target="_blank" class="social-icon" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1Bo6qx3GhV" target="_blank" class="social-icon"
+                aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer animate-in">
+            &copy; 2025 Dr. Mamoun Aldurra. All rights reserved.
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Countdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the target date: March 1, 2025 00:00:00
+            let targetDate = new Date('2025-03-01T00:00:00').getTime();
+
+            // If date is passed, set to next month's 1st
+            const now = new Date().getTime();
+            if (now > targetDate) {
+                const currentDate = new Date();
+                // Move to next month
+                let nextMonth = currentDate.getMonth() + 1;
+                let year = currentDate.getFullYear();
+
+                if (nextMonth > 11) {
+                    nextMonth = 0;
+                    year++;
+                }
+
+                targetDate = new Date(year, nextMonth, 1).getTime();
+            }
+
+            // Update timer every second
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    // Timer finished
+                    clearInterval(timerInterval);
+                    document.getElementById('countdown').innerHTML = '<div class="coming-soon-text" style="font-size:2rem;">Welcome</div>';
+                    return;
+                }
+
+                // Calculations
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update DOM elements
+                updateElement('days', days);
+                updateElement('hours', hours);
+                updateElement('minutes', minutes);
+                updateElement('seconds', seconds);
+
+            }, 1000);
+
+            function updateElement(id, value) {
+                const el = document.getElementById(id);
+                // Pad with zero if needed
+                const formattedValue = value < 10 ? '0' + value : value;
+
+                // Only animate if value changed
+                if (el.innerText !== formattedValue.toString()) {
+                    el.style.opacity = 0;
+                    setTimeout(() => {
+                        el.innerText = formattedValue;
+                        el.style.opacity = 1;
+                    }, 200);
+                }
+            }
+
+            // Check if video loaded, if error hide video show gradient fallback
+            const video = document.getElementById('bg-video');
+            video.addEventListener('error', function () {
+                document.body.classList.add('no-video-bg');
+                video.style.display = 'none';
+            });
+
+            // Also check if source is missing/empty
+            const source = video.querySelector('source');
+            source.addEventListener('error', function () {
+                console.log('Video source error');
+            });
+        });
+    </script>
+</body>
+
+</html>
