@@ -141,7 +141,7 @@
 
         /* Logo */
         .logo-placeholder {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             animation-delay: 0.2s;
             width: 100%;
             display: flex;
@@ -159,14 +159,13 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--accent-color));
             /* Gradient to right */
-            margin: 0.5rem 0 0.5rem auto;
+            margin: 1.5rem 0 1.5rem auto;
             /* Align right */
         }
 
         /* Main Heading */
-        /* Main Heading */
         .main-heading {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             animation-delay: 0.4s;
             display: flex;
             flex-direction: column;
@@ -176,7 +175,7 @@
 
         .arabic-name {
             font-family: var(--font-arabic);
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             /* Increased size */
             color: var(--accent-color);
             display: block;
@@ -187,30 +186,25 @@
 
         .english-name {
             font-family: var(--font-english);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             /* Decreased size */
             color: var(--text-color);
             display: block;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             /* Increased spacing */
             font-weight: 600;
             text-transform: uppercase;
             line-height: 1.2;
-            color: var(--text-color);
-            display: block;
-            letter-spacing: 1px;
-            font-weight: 600;
-            text-transform: uppercase;
         }
 
         /* Coming Soon */
         .coming-soon {
             font-size: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 0;
             letter-spacing: 0;
-            animation-delay: 0.6s;
+            animation-delay: 0.8s;
             position: relative;
-            padding: 1rem 0;
+            padding: 0;
             text-align: right;
             width: 100%;
         }
@@ -228,15 +222,43 @@
 
         .cs-arabic {
             font-family: var(--font-arabic);
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-right: 10px;
             letter-spacing: 0;
         }
 
         .cs-english {
             font-family: var(--font-english);
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
+        }
+
+        /* Appointment System */
+        .appointment-system {
+            margin: 2rem 0 0 0;
+            animation-delay: 0.6s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            width: 100%;
+        }
+
+        .as-arabic {
+            font-family: var(--font-arabic);
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .as-english {
+            font-family: var(--font-english);
+            font-size: 1rem;
+            color: var(--text-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         /* Countdown Timer */
@@ -244,10 +266,10 @@
             display: flex;
             justify-content: flex-end;
             /* Align right */
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 1rem;
+            margin: 0.5rem 0 2rem 0;
             flex-wrap: wrap;
-            animation-delay: 0.8s;
+            animation-delay: 0.9s;
             direction: ltr;
             /* Timer stays LTR but aligned right */
         }
@@ -255,10 +277,10 @@
         .time-box {
             background: rgba(10, 14, 26, 0.8);
             border: 1px solid rgba(201, 168, 76, 0.3);
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 4px;
             /* Slightly rounded, still formal */
-            min-width: 100px;
+            min-width: 90px;
             text-align: center;
             backdrop-filter: blur(5px);
             transition: transform 0.3s ease;
@@ -271,7 +293,7 @@
 
         .time-number {
             font-family: var(--font-english);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--accent-color);
             display: block;
             line-height: 1;
@@ -299,7 +321,7 @@
         /* Social Media Icons */
         .social-icons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             margin-top: 1rem;
             animation-delay: 1s;
             justify-content: flex-end;
@@ -309,14 +331,14 @@
 
         .social-icon {
             color: var(--accent-color);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border: 1px solid transparent;
             border-radius: 50%;
         }
@@ -343,37 +365,73 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .arabic-name {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .english-name {
-                font-size: 1.8rem;
+                font-size: 1.3rem;
             }
 
-            #countdown {
-                gap: 1rem;
-            }
-
-            .time-box {
-                min-width: 80px;
-                padding: 0.8rem;
-            }
-
-            .time-number {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
             #countdown {
                 gap: 0.8rem;
             }
 
             .time-box {
-                min-width: 70px;
+                min-width: 75px;
+                padding: 0.6rem;
+            }
+
+            .time-number {
+                font-size: 1.8rem;
+            }
+
+            .as-arabic {
+                font-size: 1.4rem;
+            }
+
+            .as-english {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arabic-name {
+                font-size: 1.8rem;
+            }
+
+            .english-name {
+                font-size: 1.1rem;
+            }
+
+            #countdown {
+                gap: 0.6rem;
+            }
+
+            .time-box {
+                min-width: 55px;
                 padding: 0.5rem;
                 flex: 1 1 40%;
                 /* 2 per row on very small screens */
+            }
+
+            .time-number {
+                font-size: 1.5rem;
+            }
+
+            .as-arabic {
+                font-size: 1.2rem;
+            }
+
+            .as-english {
+                font-size: 0.8rem;
+            }
+
+            .cs-arabic {
+                font-size: 1.2rem;
+            }
+
+            .cs-english {
+                font-size: 1rem;
             }
 
             .main-heading {
@@ -420,6 +478,13 @@
 
         <div class="decorative-line animate-in" style="animation-delay: 0.5s;"></div>
 
+        <!-- Grouped Section: Appointment, Coming Soon, Countdown -->
+        <!-- Appointment System Text -->
+        <div class="appointment-system animate-in">
+            <span class="as-arabic">نظام حجز المواعيد الإلكتروني</span>
+            <span class="as-english">Electronic Appointment Booking System</span>
+        </div>
+
         <!-- Coming Soon Text -->
         <div class="coming-soon animate-in">
             <span class="coming-soon-text">
@@ -427,8 +492,6 @@
                 <span class="cs-english">Coming Soon</span>
             </span>
         </div>
-
-        <div class="decorative-line animate-in" style="animation-delay: 0.7s;"></div>
 
         <!-- Countdown Timer -->
         <div id="countdown" class="animate-in">
@@ -467,12 +530,12 @@
 
         <!-- Footer -->
         <div class="footer animate-in">
-            &copy; 2025 Dr. Mamoun Aldurra. All rights reserved.
+            &copy; 2026 Dr. Mamoun Aldurra. All rights reserved.
         </div>
 
     </div>
 
-    <!-- JavaScript for Countdown -->
+    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Set the target date: March 1, 2025 00:00:00
@@ -534,7 +597,6 @@
                     }, 200);
                 }
             }
-
             // Check if video loaded, if error hide video show gradient fallback
             const video = document.getElementById('bg-video');
             video.addEventListener('error', function () {
