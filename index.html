@@ -43,13 +43,32 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-english);
-            overflow-x: hidden;
-            min-height: 100vh;
+            overflow: hidden;
+            /* Hide main scrollbar */
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Scroll Snapping Container */
+        .scroll-container {
+            width: 100vw;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        /* Full Height Sections */
+        .section {
+            width: 100%;
+            height: 100vh;
+            scroll-snap-align: start;
+            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         /* Background Video/Image */
@@ -86,9 +105,8 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* Container */
-        /* Container */
-        .container {
+        /* First Section Content Container */
+        .content-container {
             text-align: right;
             padding: 2rem;
             max-width: 90%;
@@ -99,8 +117,34 @@
             align-items: flex-end;
             /* Align right */
             justify-content: center;
-            height: 100vh;
+            height: 100%;
             padding-right: 5%;
+        }
+
+        /* Section 2: Cover Image */
+        .cover-image {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        /* Section 3: Animated Logo */
+        .animated-logo-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 5%;
+            z-index: 1;
+        }
+
+        .animated-logo {
+            max-width: 300px;
+            height: auto;
         }
 
         /* Animations */
@@ -461,79 +505,99 @@
     <div class="overlay"></div>
     <div class="noise-overlay"></div>
 
-    <div class="container">
+    <!-- Scroll Snapping Container -->
+    <div class="scroll-container">
 
-        <!-- Logo Section -->
-        <div class="logo-placeholder animate-in">
-            <img src="logo.png" alt="Dr. Mamoun Aldurra Logo">
-        </div>
+        <!-- Section 1: Main Content -->
+        <div class="section">
+            <div class="content-container">
 
-        <div class="decorative-line animate-in" style="animation-delay: 0.3s;"></div>
+                <!-- Logo Section -->
+                <div class="logo-placeholder animate-in">
+                    <img src="logo.png" alt="Dr. Mamoun Aldurra Logo">
+                </div>
 
-        <!-- Main Heading -->
-        <div class="main-heading animate-in">
-            <span class="arabic-name">د. مأمون الدرة</span>
-            <span class="english-name">Dr. Mamoun Aldurra</span>
-        </div>
+                <div class="decorative-line animate-in" style="animation-delay: 0.3s;"></div>
 
-        <div class="decorative-line animate-in" style="animation-delay: 0.5s;"></div>
+                <!-- Main Heading -->
+                <div class="main-heading animate-in">
+                    <span class="arabic-name">د. مأمون الدرة</span>
+                    <span class="english-name">Dr. Mamoun Aldurra</span>
+                </div>
 
-        <!-- Grouped Section: Appointment, Coming Soon, Countdown -->
-        <!-- Appointment System Text -->
-        <div class="appointment-system animate-in">
-            <span class="as-arabic">نظام حجز المواعيد الإلكتروني</span>
-            <span class="as-english">Electronic Appointment Booking System</span>
-        </div>
+                <div class="decorative-line animate-in" style="animation-delay: 0.5s;"></div>
 
-        <!-- Coming Soon Text -->
-        <div class="coming-soon animate-in">
-            <span class="coming-soon-text">
-                <span class="cs-arabic">قريباً</span>
-                <span class="cs-english">Coming Soon</span>
-            </span>
-        </div>
+                <!-- Grouped Section: Appointment, Coming Soon, Countdown -->
+                <!-- Appointment System Text -->
+                <div class="appointment-system animate-in">
+                    <span class="as-arabic">نظام حجز المواعيد الإلكتروني</span>
+                    <span class="as-english">Electronic Appointment Booking System</span>
+                </div>
 
-        <!-- Countdown Timer -->
-        <div id="countdown" class="animate-in">
-            <div class="time-box">
-                <span class="time-number" id="days">00</span>
-                <span class="time-label">Days<span>أيام</span></span>
+                <!-- Coming Soon Text -->
+                <div class="coming-soon animate-in">
+                    <span class="coming-soon-text">
+                        <span class="cs-arabic">قريباً</span>
+                        <span class="cs-english">Coming Soon</span>
+                    </span>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div id="countdown" class="animate-in">
+                    <div class="time-box">
+                        <span class="time-number" id="days">00</span>
+                        <span class="time-label">Days<span>أيام</span></span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-number" id="hours">00</span>
+                        <span class="time-label">Hours<span>ساعات</span></span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-number" id="minutes">00</span>
+                        <span class="time-label">Minutes<span>دقائق</span></span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-number" id="seconds">00</span>
+                        <span class="time-label">Seconds<span>ثواني</span></span>
+                    </div>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons animate-in">
+                    <a href="https://www.linkedin.com/in/dr-mamoun-aldurra" target="_blank" class="social-icon"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/963969127243" target="_blank" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1Bo6qx3GhV" target="_blank" class="social-icon"
+                        aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="footer animate-in">
+                    &copy; 2026 Dr. Mamoun Aldurra. All rights reserved.
+                </div>
+
             </div>
-            <div class="time-box">
-                <span class="time-number" id="hours">00</span>
-                <span class="time-label">Hours<span>ساعات</span></span>
-            </div>
-            <div class="time-box">
-                <span class="time-number" id="minutes">00</span>
-                <span class="time-label">Minutes<span>دقائق</span></span>
-            </div>
-            <div class="time-box">
-                <span class="time-number" id="seconds">00</span>
-                <span class="time-label">Seconds<span>ثواني</span></span>
+        </div> <!-- End Section 1 -->
+
+        <!-- Section 2: Cover Image -->
+        <div class="section">
+            <img src="Cover.png" alt="Dr. Mamoun Aldurra Clinic Services" class="cover-image">
+        </div>
+
+        <!-- Section 3: Animated Logo -->
+        <div class="section">
+            <div class="animated-logo-container">
+                <img src="logo Trans.gif" alt="Animated Logo" class="animated-logo">
             </div>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="social-icons animate-in">
-            <a href="https://www.linkedin.com/in/dr-mamoun-aldurra" target="_blank" class="social-icon"
-                aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://wa.me/963969127243" target="_blank" class="social-icon" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.facebook.com/share/1Bo6qx3GhV" target="_blank" class="social-icon"
-                aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer animate-in">
-            &copy; 2026 Dr. Mamoun Aldurra. All rights reserved.
-        </div>
-
-    </div>
+    </div> <!-- End Scroll Container -->
 
     <!-- JavaScript -->
     <script>
