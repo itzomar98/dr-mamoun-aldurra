@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mamoun Aldurra - Coming Soon | د. مأمون الدرة</title>
+    <title>Dr. Mamoun Aldurra | Consultant Vascular Surgeon - د. مأمون الدرة</title>
     <meta name="description"
-        content="Official website of Dr. Mamoun Aldurra. Coming soon. الموقع الرسمي للدكتور مأمون الدرة. قريباً.">
+        content="Official medical website of Dr. Mamoun Aldurra, Consultant Vascular Surgeon, holder of the French AFS degree from the University of Lille 2 and the Syrian Board. Internationally registered medical inventor.">
+    <meta name="keywords"
+        content="Dr Mamoun Aldurra, Vascular Surgery, Varicose Veins Laser, Diabetic Foot Limb Salvage, Angioplasty, AV Fistula Dialysis, Medical Patents, Misurata Libya, Damascus Syria, Sharjah UAE">
+    <meta name="author" content="Dr. Mamoun Aldurra">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.png" type="image/png">
@@ -16,662 +19,1749 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <style>
-        :root {
-            --bg-color: #0a0e1a;
-            --accent-color: #c9a84c;
-            /* Gold */
-            --text-color: #ffffff;
-            --secondary-text: #b0b0b0;
-            --overlay-color: rgba(5, 8, 20, 0.65);
-            --font-arabic: 'GE SS Two', 'Cairo', sans-serif;
-            --font-english: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-english);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            /* Scroll snapping setup */
-            height: 100vh;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-        }
-
-        /* Snap Sections */
-        .section {
-            scroll-snap-align: start;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* Background Video/Image */
-        #bg-video,
-        #bg-gif {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -2;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--overlay-color);
-            z-index: -1;
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        /* Container (Inside Section 1) */
-        .container {
-            text-align: right;
-            padding: 2rem;
-            max-width: 90%;
-            width: 100%;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            /* Align right */
-            justify-content: center;
-            height: 100%;
-            padding-right: 5%;
-        }
-
-        /* Section 2 (Cover) */
-        .section-cover {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .section-cover img {
-            max-width: 100%;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            border-radius: 8px;
-            /* Optional subtle rounding */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            /* Adds a nice lifted effect */
-        }
-
-        /* Section 3 (Logo Centered) */
-        .section-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .section-logo img {
-            max-width: 300px;
-            /* Slightly larger log */
-            width: 80%;
-            height: auto;
-            animation: none;
-            /* remove fade in if needed, or keep logic */
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-                /* Slide in from right */
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                color: var(--accent-color);
-                text-shadow: none;
-            }
-
-            50% {
-                color: #ffeebb;
-                text-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
-            }
-
-            100% {
-                color: var(--accent-color);
-                text-shadow: none;
-            }
-        }
-
-        .animate-in {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        /* Logo */
-        .logo-placeholder {
-            margin-bottom: 2rem;
-            animation-delay: 0.2s;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .logo-placeholder img {
-            max-width: 180px;
-            height: auto;
-        }
-
-        /* Decorative Line */
-        .decorative-line {
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-color));
-            /* Gradient to right */
-            margin: 1.5rem 0 1.5rem auto;
-            /* Align right */
-        }
-
-        /* Main Heading */
-        .main-heading {
-            margin: 1.5rem 0;
-            animation-delay: 0.4s;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            /* Align right */
-        }
-
-        .arabic-name {
-            font-family: var(--font-arabic);
-            font-size: 3.2rem;
-            /* Increased size */
-            color: var(--accent-color);
-            display: block;
-            margin-bottom: 0px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .english-name {
-            font-family: var(--font-english);
-            font-size: 1.5rem;
-            /* Decreased size */
-            color: var(--text-color);
-            display: block;
-            letter-spacing: 2px;
-            /* Increased spacing */
-            font-weight: 600;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        /* Coming Soon */
-        .coming-soon {
-            font-size: 1.5rem;
-            margin: 0;
-            letter-spacing: 0;
-            animation-delay: 0.8s;
-            position: relative;
-            padding: 0;
-            text-align: right;
-            width: 100%;
-        }
-
-        .coming-soon-text {
-            animation: shimmer 3s infinite ease-in-out;
-            display: flex;
-            flex-direction: row-reverse;
-            /* Arabic First */
-            justify-content: flex-start;
-            /* Start from right (because of row-reverse) */
-            align-items: center;
-            gap: 15px;
-        }
-
-        .cs-arabic {
-            font-family: var(--font-arabic);
-            font-size: 1.4rem;
-            margin-right: 10px;
-            letter-spacing: 0;
-        }
-
-        .cs-english {
-            font-family: var(--font-english);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
-
-        /* Appointment System */
-        .appointment-system {
-            margin: 2rem 0 0 0;
-            animation-delay: 0.6s;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-            width: 100%;
-        }
-
-        .as-arabic {
-            font-family: var(--font-arabic);
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .as-english {
-            font-family: var(--font-english);
-            font-size: 1rem;
-            color: var(--text-color);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* Countdown Timer */
-        #countdown {
-            display: flex;
-            justify-content: flex-end;
-            /* Align right */
-            gap: 1rem;
-            margin: 0.5rem 0 2rem 0;
-            flex-wrap: wrap;
-            animation-delay: 0.9s;
-            direction: ltr;
-            /* Timer stays LTR but aligned right */
-        }
-
-        .time-box {
-            background: rgba(10, 14, 26, 0.8);
-            border: 1px solid rgba(201, 168, 76, 0.3);
-            padding: 0.8rem;
-            border-radius: 4px;
-            /* Slightly rounded, still formal */
-            min-width: 90px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s ease;
-        }
-
-        .time-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .time-number {
-            font-family: var(--font-english);
-            font-size: 2.2rem;
-            color: var(--accent-color);
-            display: block;
-            line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-
-        .time-label {
-            font-family: var(--font-english);
-            color: var(--secondary-text);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-        }
-
-        .time-label span {
-            display: block;
-            font-family: var(--font-arabic);
-            font-size: 0.8rem;
-            margin-top: 2px;
-            letter-spacing: 0;
-            opacity: 0.8;
-        }
-
-        /* Social Media Icons */
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            animation-delay: 1s;
-            justify-content: flex-end;
-            /* Align right */
-            width: 100%;
-        }
-
-        .social-icon {
-            color: var(--accent-color);
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid transparent;
-            border-radius: 50%;
-        }
-
-        .social-icon:hover {
-            color: #fff;
-            transform: scale(1.15);
-            text-shadow: 0 0 10px var(--accent-color);
-            border-color: rgba(201, 168, 76, 0.5);
-            background: rgba(201, 168, 76, 0.1);
-            box-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-            opacity: 0.6;
-            animation-delay: 1.2s;
-        }
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .arabic-name {
-                font-size: 2.2rem;
-            }
-
-            .english-name {
-                font-size: 1.3rem;
-            }
-
-            #countdown {
-                gap: 0.8rem;
-            }
-
-            .time-box {
-                min-width: 75px;
-                padding: 0.6rem;
-            }
-
-            .time-number {
-                font-size: 1.8rem;
-            }
-
-            .as-arabic {
-                font-size: 1.4rem;
-            }
-
-            .as-english {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .arabic-name {
-                font-size: 1.8rem;
-            }
-
-            .english-name {
-                font-size: 1.1rem;
-            }
-
-            #countdown {
-                gap: 0.6rem;
-            }
-
-            .time-box {
-                min-width: 55px;
-                padding: 0.5rem;
-                flex: 1 1 40%;
-                /* 2 per row on very small screens */
-            }
-
-            .time-number {
-                font-size: 1.5rem;
-            }
-
-            .as-arabic {
-                font-size: 1.2rem;
-            }
-
-            .as-english {
-                font-size: 0.8rem;
-            }
-
-            .cs-arabic {
-                font-size: 1.2rem;
-            }
-
-            .cs-english {
-                font-size: 1rem;
-            }
-
-            .main-heading {
-                margin: 0.5rem 0;
-            }
-        }
-
-        /* Fallback for background video */
-        .no-video-bg {
-            background: radial-gradient(circle at center, #1a2236 0%, #0a0e1a 100%);
-        }
-    </style>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="lang-en">
 
-    <!-- Background Video -->
-    <video autoplay muted loop playsinline id="bg-video" poster="">
-        <source src="background.mp4" type="video/mp4">
-        <!-- Fallback to GIF if user prefers or MP4 fails -->
-    </video>
+    <!-- Ambient Video / Graphic Background -->
+    <div class="ambient-bg">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="ambient-overlay"></div>
+    <div class="noise-grid"></div>
 
-    <!-- IF USING GIF INSTEAD, COMMENT OUT ABOVE AND UNCOMMENT BELOW -->
-    <!-- <img src="background.gif" id="bg-gif" alt="Background Animation"> -->
-
-    <!-- Dark Overlay (Global) -->
-    <div class="overlay"></div>
-    <div class="noise-overlay"></div>
-
-    <!-- MAIN SCROLL SNAP WRAPPER IS the body itself here, or we can use the sections inside body -->
-
-    <!-- SECTION 1: Existing Content -->
-    <div class="section">
+    <!-- ==========================================================================
+       SITE HEADER / NAVIGATION
+       ========================================================================== -->
+    <header class="site-header">
         <div class="container">
-
-            <!-- Logo Section -->
-            <div class="logo-placeholder animate-in">
-                <img src="logo.png" alt="Dr. Mamoun Aldurra Logo">
-            </div>
-
-            <div class="decorative-line animate-in" style="animation-delay: 0.3s;"></div>
-
-            <!-- Main Heading -->
-            <div class="main-heading animate-in">
-                <span class="arabic-name">د. مأمون الدرة</span>
-                <span class="english-name">Dr. Mamoun Aldurra</span>
-            </div>
-
-            <div class="decorative-line animate-in" style="animation-delay: 0.5s;"></div>
-
-            <!-- Grouped Section: Appointment, Coming Soon, Countdown -->
-            <!-- Appointment System Text -->
-            <div class="appointment-system animate-in">
-                <span class="as-arabic">نظام حجز المواعيد الإلكتروني</span>
-                <span class="as-english">Electronic Appointment Booking System</span>
-            </div>
-
-            <!-- Coming Soon Text -->
-            <div class="coming-soon animate-in">
-                <span class="coming-soon-text">
-                    <span class="cs-arabic">قريباً</span>
-                    <span class="cs-english">Coming Soon</span>
-                </span>
-            </div>
-
-            <!-- Countdown Timer -->
-            <div id="countdown" class="animate-in">
-                <div class="time-box">
-                    <span class="time-number" id="days">00</span>
-                    <span class="time-label">Days<span>أيام</span></span>
-                </div>
-                <div class="time-box">
-                    <span class="time-number" id="hours">00</span>
-                    <span class="time-label">Hours<span>ساعات</span></span>
-                </div>
-                <div class="time-box">
-                    <span class="time-number" id="minutes">00</span>
-                    <span class="time-label">Minutes<span>دقائق</span></span>
-                </div>
-                <div class="time-box">
-                    <span class="time-number" id="seconds">00</span>
-                    <span class="time-label">Seconds<span>ثواني</span></span>
-                </div>
-            </div>
-
-            <!-- Social Media Icons -->
-            <div class="social-icons animate-in">
-                <a href="https://www.linkedin.com/in/dr-mamoun-aldurra" target="_blank" class="social-icon"
-                    aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+            <div class="nav-wrapper">
+                <a href="#hero" class="brand-logo" aria-label="Dr. Mamoun Aldurra Home">
+                    <img id="brandLogoImg" src="logo-en.png" class="logo-en"
+                        alt="Dr. Mamoun Aldurra - Consultant Vascular Surgeon">
                 </a>
-                <a href="https://wa.me/963969127243" target="_blank" class="social-icon" aria-label="WhatsApp">
+
+                <!-- Desktop & Mobile Menu -->
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active" data-en="Home" data-ar="الرئيسية"
+                            data-fr="Accueil">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-en="About" data-ar="عن الطبيب"
+                            data-fr="À Propos">About</a></li>
+                    <li><a href="#services" class="nav-link" data-en="Specialties" data-ar="التخصصات والخدمات"
+                            data-fr="Spécialités">Specialties</a></li>
+                    <li><a href="#patents" class="nav-link" data-en="Patents" data-ar="براءات الاختراع"
+                            data-fr="Brevets">Patents</a></li>
+                    <li><a href="#experience" class="nav-link" data-en="Experience" data-ar="المسيرة المهنية"
+                            data-fr="Expérience">Experience</a></li>
+                    <li><a href="#education" class="nav-link" data-en="Education" data-ar="المؤهلات والبورد"
+                            data-fr="Diplômes">Education</a></li>
+                    <li><a href="#locations" class="nav-link" data-en="Clinics" data-ar="العيادات"
+                            data-fr="Cliniques">Clinics</a></li>
+                    <li><a href="#booking" class="nav-link" data-en="Book Appointment" data-ar="حجز موعد"
+                            data-fr="Rendez-vous">Book Appointment</a></li>
+                </ul>
+
+                <!-- Header Actions -->
+                <div class="nav-actions">
+                    <!-- Trilingual Segmented Pill Switcher -->
+                    <div class="lang-selector" aria-label="Select Language">
+                        <button class="lang-pill-btn active" data-lang-target="en" title="English">EN</button>
+                        <button class="lang-pill-btn" data-lang-target="ar" title="العربية">عربي</button>
+                        <button class="lang-pill-btn" data-lang-target="fr" title="Français">FR</button>
+                    </div>
+
+                    <a href="#booking" class="btn-book-header">
+                        <i class="fas fa-calendar-check"></i>
+                        <span data-en="Book Consultation" data-ar="حجز استشارة" data-fr="Prendre RDV">Book
+                            Consultation</span>
+                    </a>
+                    <button class="mobile-toggle" aria-label="Open Mobile Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Left Hero Content -->
+                <div class="hero-content">
+
+                    <div class="badge-gold">
+                        <i class="fas fa-award"></i>
+                        <span data-en="Consultant Vascular Surgeon | Syrian Board & French AFS Lille"
+                            data-ar="استشاري جراحة الأوعية الدموية | بورد جراحة الأوعية الدموية والجراحة العامة"
+                            data-fr="Chirurgien Vasculaire Consultant | Diplôme AFS Lille & Syrian Board">
+                            Consultant Vascular Surgeon | Syrian Board & French AFS Lille
+                        </span>
+                    </div>
+
+                    <div class="hero-title-group">
+                        <h1 class="hero-title-ar" data-en="Dr. Mamoun <span>Aldurra</span>"
+                            data-ar="د. مأمون <span>الدرة</span>" data-fr="Dr. Mamoun <span>Aldurra</span>">
+                            Dr. Mamoun <span>Aldurra</span>
+                        </h1>
+                        <span class="hero-title-en" data-en="CONSULTANT VASCULAR & LAPAROSCOPIC SURGEON"
+                            data-ar="استشاري جراحة الأوعية الدموية والجراحة العامة والتنظيرية"
+                            data-fr="CHIRURGIEN VASCULAIRE & LAPAROSCOPIQUE CONSULTANT">
+                            CONSULTANT VASCULAR & LAPAROSCOPIC SURGEON
+                        </span>
+                        <p class="hero-subtitle"
+                            data-en="Consultant in Vascular, Endovascular, General and Laparoscopic Surgery"
+                            data-ar="استشاري جراحة الأوعية الدموية والتداخلات القثطارية والجراحة التنظيرية"
+                            data-fr="Consultant en Chirurgie Vasculaire, Endovasculaire et Cœlioscopie">
+                            Consultant in Vascular, Endovascular, General and Laparoscopic Surgery
+                        </p>
+                    </div>
+
+                    <ul class="hero-roles">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="Head of Vascular Surgery - Aljazera International Hospital (Misurata, Libya)"
+                                data-ar="رئيس قسم جراحة الأوعية الدموية - مستشفى الجزيرة الدولي (مصراتة، ليبيا)"
+                                data-fr="Chef du Service de Chirurgie Vasculaire - Hôpital International Aljazera (Misurata, Libye)">
+                                Head of Vascular Surgery - Aljazera International Hospital (Misurata, Libya)
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span
+                                data-en="Former Head of Vascular Surgery - National Cancer Institute (Misurata, Libya)"
+                                data-ar="رئيس قسم جراحة الأوعية الدموية سابقاً - المعهد القومي للأورام (مصراتة، ليبيا)"
+                                data-fr="Ancien Chef du Service de Chirurgie Vasculaire - Institut National d'Oncologie (Misurata, Libye)">
+                                Former Head of Vascular Surgery - National Cancer Institute (Misurata, Libya)
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span
+                                data-en="Specialized Training Certificate (AFS) in Vascular Surgery & Organ Transplant - University of Lille 2 (France)"
+                                data-ar="شهادة التدريب التخصصي العالي (AFS) من جامعة ليل 2 (فرنسا) في جراحة الأوعية وزراعة الأعضاء"
+                                data-fr="Attestation de Formation Spécialisée (AFS) en Chirurgie Vasculaire & Greffes - Université de Lille 2 (France)">
+                                Specialized Training Certificate (AFS) in Vascular Surgery & Organ Transplant -
+                                University of Lille 2 (France)
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!-- Slogan Quote Box -->
+                    <div class="hero-quote-card">
+                        <p>
+                            <i class="fas fa-quote-right"></i>
+                            <span
+                                data-en="Over two decades of surgical excellence... Placing your health in safe, expert hands."
+                                data-ar="أكثر من عشرين عاماً من الخبرة... لنضع صحتكم في أيدٍ خبيرة وآمنة"
+                                data-fr="Plus de deux décennies d'excellence chirurgicale... Confiez votre santé à des mains expertes et sécurisantes.">
+                                Over two decades of surgical excellence... Placing your health in safe, expert hands.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="hero-cta-group">
+                        <a href="#booking" class="btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-en="Book an Appointment" data-ar="احجز موعد استشارة"
+                                data-fr="Prendre un Rendez-vous">Book an Appointment</span>
+                        </a>
+                        <a href="https://wa.me/218911694229" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-en="WhatsApp Direct" data-ar="محادثة واتساب مباشرة"
+                                data-fr="WhatsApp Direct">WhatsApp Direct</span>
+                        </a>
+                        <a href="#patents" class="btn-secondary">
+                            <i class="fas fa-lightbulb"></i>
+                            <span data-en="Patents & Innovations" data-ar="براءات الاختراع والابتكارات"
+                                data-fr="Brevets & Innovations">Patents & Innovations</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="hero-stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="20">+20</span>
+                            <span class="stat-label" data-en="Years Experience" data-ar="عاماً من الخبرة الجراحية"
+                                data-fr="Ans d'Expérience">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="5">5</span>
+                            <span class="stat-label" data-en="Patented Innovations" data-ar="براءات اختراع دولية"
+                                data-fr="Brevets Médicaux">Patented Innovations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="10000">+10k</span>
+                            <span class="stat-label" data-en="Procedures Done" data-ar="تداخل وعائي وجراحي ناجح"
+                                data-fr="Interventions Réussies">Procedures Done</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="4">4</span>
+                            <span class="stat-label" data-en="Specialized Centers" data-ar="مراكز وعيادات تخصصية"
+                                data-fr="Centres Spécialisés">Specialized Centers</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Medical Profile & Philosophy"
+                    data-ar="السيرة الذاتية والرؤية الطبية" data-fr="Profil Médical & Philosophie">Medical Profile &
+                    Philosophy</span>
+                <h2 class="section-title" data-en="Two Decades of Surgical Excellence & Innovation"
+                    data-ar="مسيرة جراحية تفوق عقدين من التميز والابتكار"
+                    data-fr="Deux Décennies d'Excellence Chirurgicale et d'Innovation">
+                    Two Decades of Surgical Excellence & Innovation
+                </h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-card">
+                <div class="about-grid">
+
+                    <div class="about-main-text">
+                        <h3 data-en="Dr. Mamoun Aldurra - Consultant Vascular Surgeon"
+                            data-ar="د. مأمون الدرة - استشاري جراحة الأوعية الدموية"
+                            data-fr="Dr. Mamoun Aldurra - Chirurgien Vasculaire Consultant">
+                            Dr. Mamoun Aldurra - Consultant Vascular Surgeon
+                        </h3>
+                        <p class="about-lead"
+                            data-en="With over two decades of experience as a Vascular Surgeon, Dr. Mamoun Aldurra is committed to advancing patient outcomes, limb preservation, and cutting-edge surgical innovations."
+                            data-ar="كرّس الدكتور مأمون الدرة أكثر من 20 عاماً من الممارسة الجراحية الدقيقة لإنقاذ حياة المرضى وحماية الأطراف من البتر، مع شغف مستمر بالبحث العلمي وتطوير الأدوات الجراحية."
+                            data-fr="Fort de plus de 20 ans d'exercice chirurgical de haute précision, le Dr Mamoun Aldurra consacre sa carrière à préserver la santé des patients et à sauver les membres de l'amputation, alliant humanisme médical et innovations brevetées.">
+                            With over two decades of experience as a Vascular Surgeon, Dr. Mamoun Aldurra is committed
+                            to advancing patient outcomes, limb preservation, and cutting-edge surgical innovations.
+                        </p>
+                        <p class="about-p"
+                            data-en="Initially specializing in General Surgery in Damascus with significant expertise in Laparoscopic Surgery, his commitment to advancing medical knowledge led him to pursue high-level fellowship training at the University of Lille 2 (France), focusing on Kidney and Liver Transplantation and earning a specialty certificate (AFS) in Vascular Surgery, alongside training at Centre Hospitalier de Beauvais in visceral, oncological, and laparoscopic surgery."
+                            data-ar="بدأ مسيرته بالتخصص في الجراحة العامة والجراحة التنظيرية المتقدمة في دمشق، ثم قاده شغفه بتطوير العلوم الطبية لنيل شهادة التدريب التخصصي العالي (AFS) من جامعة ليل 2 في فرنسا، مركزاً على جراحة الأوعية الدموية وزراعة الكلى والكبد، وتدرب في المركز الاستشفائي بوفيه (Beauvais) على جراحة الأحشاء والأورام الهضمية."
+                            data-fr="Après sa spécialisation initiale en chirurgie générale et laparoscopie avancée à Damas, sa quête d'approfondissement médical l'a mené à l'Université de Lille 2 (France) où il a obtenu l'Attestation de Formation Spécialisée (AFS) en chirurgie vasculaire et transplantation d'organes (rein et foie), avec une formation approfondie en oncologie digestive et chirurgie viscérale au Centre Hospitalier de Beauvais.">
+                            Initially specializing in General Surgery in Damascus with significant expertise in
+                            Laparoscopic Surgery, his commitment to advancing medical knowledge led him to pursue
+                            high-level fellowship training at the University of Lille 2 (France), focusing on Kidney and
+                            Liver Transplantation and earning a specialty certificate (AFS) in Vascular Surgery,
+                            alongside training at Centre Hospitalier de Beauvais in visceral, oncological, and
+                            laparoscopic surgery.
+                        </p>
+                        <p class="about-p"
+                            data-en="Passionate about enhancing patient outcomes, Dr. Aldurra developed specialized and precise surgical tools, several of which are patented internationally (WIPO & Turkey). He presented one of his major vascular innovations to Boston Scientific, receiving great admiration for its precision and tissue protection capabilities."
+                            data-ar="تقلد الدكتور مأمون منصب رئيس قسم جراحة الأوعية الدموية في كبرى المؤسسات الطبية كالمعهد القومي لعلاج الأورام بمصراتة ومستشفى الجزيرة الدولي، وعمل كعضو هيئة تدريس في جامعة طبرق. طوّر أدوات جراحية متقدمة وحصل على براءات اختراع دولية وعرض أحد ابتكاراته على شركة Boston Scientific العالمية."
+                            data-fr="Passionné par l'amélioration continue des résultats chirurgicaux, le Dr Aldurra a conçu des instruments chirurgicaux précis brevetés à l'international (OMPI et Turquie), et a présenté l'une de ses innovations majeures à Boston Scientific, suscitant une vive admiration pour sa précision et sa protection tissulaire.">
+                            Passionate about enhancing patient outcomes, Dr. Aldurra developed specialized and precise
+                            surgical tools, several of which are patented internationally (WIPO & Turkey). He presented
+                            one of his major vascular innovations to Boston Scientific, receiving great admiration for
+                            its precision and tissue protection capabilities.
+                        </p>
+                    </div>
+
+                    <div class="about-secondary">
+                        <div class="about-highlights">
+                            <div class="highlight-box">
+                                <i class="fas fa-heart-pulse"></i>
+                                <h4 data-en="Limb & Diabetic Foot Salvage" data-ar="إنقاذ الأطراف والقدم السكرية"
+                                    data-fr="Sauvetage du Pied Diabétique">Limb & Diabetic Foot Salvage</h4>
+                                <p data-en="Advanced microvascular revascularization protocols to prevent amputations."
+                                    data-ar="بروتوكولات حديثة لإعادة التروية الشريانية وتجنب البتر بنسب نجاح عالية."
+                                    data-fr="Protocoles avancés de revascularisation artérielle pour prévenir les amputations.">
+                                    Advanced microvascular revascularization protocols to prevent amputations.
+                                </p>
+                            </div>
+
+                            <div class="highlight-box">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                <h4 data-en="Minimally Invasive Varicose Veins" data-ar="علاج الدوالي غير الجراحي"
+                                    data-fr="Traitement Mini-Invasif des Varices">Minimally Invasive Varicose Veins</h4>
+                                <p data-en="State-of-the-art Endovenous Laser (EVLT), Radiofrequency (RFA) & Foam Sclerotherapy."
+                                    data-ar="تقنيات الليزر والتردد الحراري (RFA) والتصليب الرغوي بأعلى درجات الأمان."
+                                    data-fr="Laser endoveineux (EVLT), Radiofréquence (RFA) et Sclérothérapie mousse.">
+                                    State-of-the-art Endovenous Laser (EVLT), Radiofrequency (RFA) & Foam Sclerotherapy.
+                                </p>
+                            </div>
+
+                            <div class="highlight-box">
+                                <i class="fas fa-dna"></i>
+                                <h4 data-en="Dialysis AV Fistula Access" data-ar="وصلات غسيل الكلى (AV Fistula)"
+                                    data-fr="Fistules d'Hémodialyse (FAV)">Dialysis AV Fistula Access</h4>
+                                <p data-en="Creation and endovascular salvage of complex dialysis vascular access."
+                                    data-ar="إنشاء النواسير الشريانية الوريدية المعقدة وصيانتها بالقثطرة التداخلية."
+                                    data-fr="Création de fistules artério-veineuses complexes et sauvetage endovasculaire.">
+                                    Creation and endovascular salvage of complex dialysis vascular access.
+                                </p>
+                            </div>
+
+                            <div class="highlight-box">
+                                <i class="fas fa-hospital-user"></i>
+                                <h4 data-en="Laparoscopy & Digestive Oncology" data-ar="الجراحة التنظيرية وأورام الهضم"
+                                    data-fr="Cœlioscopie & Oncologie Digestive">Laparoscopy & Digestive Oncology</h4>
+                                <p data-en="French hospital training in advanced laparoscopy, colectomy, and oncology."
+                                    data-ar="خبرة ممتدة من المستشفيات الفرنسية في جراحة الأورام والجراحة التنظيرية."
+                                    data-fr="Expertise française approfondie en chirurgie laparoscopique et oncologie digestive.">
+                                    French hospital training in advanced laparoscopy, colectomy, and oncology.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Languages Box -->
+                        <div class="languages-wrap">
+                            <h4 data-en="<i class='fas fa-language'></i> Spoken Languages"
+                                data-ar="<i class='fas fa-language'></i> إتقان اللغات العالمية"
+                                data-fr="<i class='fas fa-language'></i> Langues Pratiquées">
+                                <i class="fas fa-language"></i> Spoken Languages
+                            </h4>
+                            <div class="lang-list">
+                                <div class="lang-item">
+                                    <span class="lang-name"><i class="fas fa-check text-gold"></i> Arabic
+                                        (العربية)</span>
+                                    <span class="lang-level" data-en="Native / Bilingual" data-ar="اللغة الأم (Native)"
+                                        data-fr="Langue Maternelle">Native / Bilingual</span>
+                                </div>
+                                <div class="lang-item">
+                                    <span class="lang-name"><i class="fas fa-check text-gold"></i> English
+                                        (الإنجليزية)</span>
+                                    <span class="lang-level" data-en="Professional Working"
+                                        data-ar="إتقان مهني وعلمي (Professional)"
+                                        data-fr="Usage Professionnel">Professional Working</span>
+                                </div>
+                                <div class="lang-item">
+                                    <span class="lang-name"><i class="fas fa-check text-gold"></i> French
+                                        (الفرنسية)</span>
+                                    <span class="lang-level" data-en="Professional Working (France)"
+                                        data-ar="إتقان مهني وجراحي (Professional)"
+                                        data-fr="Usage Professionnel & Chirurgical">Professional Working (France)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       CLINICAL SERVICES & EXPERTISE
+       ========================================================================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Specialized Clinical Care" data-ar="الرعاية الطبية المتقدمة"
+                    data-fr="Soins Cliniques Spécialisés">Specialized Clinical Care</span>
+                <h2 class="section-title" data-en="Vascular & Endovascular Specialties"
+                    data-ar="التخصصات والخدمات الجراحية التداخلية"
+                    data-fr="Spécialités Chirurgicales & Endovasculaires">
+                    Vascular & Endovascular Specialties
+                </h2>
+                <p class="section-desc"
+                    data-en="Providing state-of-the-art diagnostic and surgical vascular solutions based on French and international medical guidelines."
+                    data-ar="نقدم أحدث الحلول الطبية والتشخيصية لعلاج أمراض الأوعية الدموية والجراحة التنظيرية وفق أرقى المعايير العالمية."
+                    data-fr="Solutions diagnostiques et chirurgicales vasculaires de pointe selon les normes médicales françaises et internationales.">
+                    Providing state-of-the-art diagnostic and surgical vascular solutions based on French and
+                    international medical guidelines.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Peripheral Arterial Disease (PAD) & Angioplasty"
+                            data-ar="علاج أمراض الشرايين الدقيقة والمحيطية"
+                            data-fr="Maladies Artérielles Périphériques & Angioplastie">
+                            Peripheral Arterial Disease (PAD) & Angioplasty
+                        </h3>
+                        <span class="service-subtitle-en">ARTERIAL DISEASES & ANGIOPLASTY</span>
+                        <p class="service-desc"
+                            data-en="Diagnosis and treatment of arterial occlusions, carotid endarterectomy for stroke prevention, and aortic aneurysm repair."
+                            data-ar="تشخيص وعلاج انسداد وتصلب الشرايين المحيطية، تضيق الشريان السباتي للوقاية من السكتات الدماغية، وتدبير أم الدم الشريانية (Aneurysm) جراحياً وعبر القسطرة."
+                            data-fr="Diagnostic et prise en charge des occlusions artérielles, endartériectomie carotidienne préventive des AVC et traitement des anévrismes aortiques.">
+                            Diagnosis and treatment of arterial occlusions, carotid endarterectomy for stroke
+                            prevention, and aortic aneurysm repair.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Balloon Angioplasty & Stenting"
+                                    data-ar="توسيع الشرايين بالقثطرة والبالون والدعامات"
+                                    data-fr="Angioplastie par ballonnet et pose de stents">Balloon Angioplasty &
+                                    Stenting</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Carotid Surgery & Stroke Prevention"
+                                    data-ar="جراحة الشريان السباتي (Carotid Endarterectomy)"
+                                    data-fr="Chirurgie carotidienne préventive des AVC">Carotid Surgery & Stroke
+                                    Prevention</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Arterial Bypass Surgery"
+                                    data-ar="عمليات المجازة الشريانية التجاوزية (Bypass)"
+                                    data-fr="Pontages artériels de revascularisation">Arterial Bypass Surgery</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Varicose Veins & Venous Disorders"
+                            data-ar="علاج دوالي الساقين وأمراض الأوردة" data-fr="Varices & Pathologies Veineuses">
+                            Varicose Veins & Venous Disorders
+                        </h3>
+                        <span class="service-subtitle-en">VARICOSE VEINS & VENOUS CARE</span>
+                        <p class="service-desc"
+                            data-en="Modern minimally invasive varicose vein treatments without general anesthesia, deep vein thrombosis (DVT) care, and venous insufficiency therapy."
+                            data-ar="التخلص من دوالي الساقين بأحدث التقنيات اليومية دون الحاجة لجراحة تقليدية أو تخدير عام، مع علاج القصور الوريدي المزمن وخثار الأوردة العميقة (DVT)."
+                            data-fr="Traitements modernes mini-invasifs des varices sans anesthésie générale, gestion des thromboses veineuses profondes (TVP) et insuffisance veineuse.">
+                            Modern minimally invasive varicose vein treatments without general anesthesia, deep vein
+                            thrombosis (DVT) care, and venous insufficiency therapy.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Endovenous Laser Ablation (EVLT)"
+                                    data-ar="العلاج بالليزر الوريدي الداخلي (Endovenous Laser)"
+                                    data-fr="Ablation par Laser Endoveineux (EVLT)">Endovenous Laser Ablation
+                                    (EVLT)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Radiofrequency Ablation (RFA)"
+                                    data-ar="التردد الحراري (Radiofrequency Ablation - RFA)"
+                                    data-fr="Ablation par Radiofréquence (RFA)">Radiofrequency Ablation (RFA)</span>
+                            </li>
+                            <li><i class="fas fa-check"></i> <span data-en="Foam Sclerotherapy & Injections"
+                                    data-ar="المعالجة بالتصليب والتصليب الرغوي (Sclerotherapy)"
+                                    data-fr="Sclérothérapie à la mousse">Foam Sclerotherapy & Injections</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-shield-heart"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Diabetic Foot & Limb Salvage"
+                            data-ar="العناية بالقدم السكرية وإنقاذ الأطراف" data-fr="Sauvetage du Pied Diabétique">
+                            Diabetic Foot & Limb Salvage
+                        </h3>
+                        <span class="service-subtitle-en">DIABETIC FOOT SALVAGE</span>
+                        <p class="service-desc"
+                            data-en="Comprehensive protocol for arterial revascularization to salvage diabetic limbs, prevent amputations, and promote chronic ulcer healing."
+                            data-ar="برنامج علاجي متكامل ومتخصص لإعادة التروية الدموية للشرايين المتضيقة والمغلقة في الساق والقدم لإنقاذ الطرف المصاب من خطر البتر وتسريع شفاء القروح المستعصية."
+                            data-fr="Protocole complet de revascularisation artérielle pour sauver les membres diabétiques et accélérer la cicatrisation des ulcères chroniques.">
+                            Comprehensive protocol for arterial revascularization to salvage diabetic limbs, prevent
+                            amputations, and promote chronic ulcer healing.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Microvascular Revascularization by Catheter"
+                                    data-ar="إعادة التروية الشريانية بالقسطرة وتوسيع الشرايين الدقيقة"
+                                    data-fr="Revascularisation microvasculaire par cathétérisme">Microvascular
+                                    Revascularization by Catheter</span></li>
+                            <li><i class="fas fa-check"></i> <span
+                                    data-en="Advanced Chronic Ulcer Debridement & Healing"
+                                    data-ar="معالجة وتطهير القرح السكرية المزمنة"
+                                    data-fr="Soins spécialisés des ulcères chroniques">Advanced Chronic Ulcer
+                                    Debridement & Healing</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Preventive Long-term Foot Care Plans"
+                                    data-ar="وقاية استباقية لمنع تكرار المضاعفات والالتهابات"
+                                    data-fr="Plans de prévention à long terme contre les récidives">Preventive Long-term
+                                    Foot Care Plans</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Dialysis Vascular Access (AV Fistula)"
+                            data-ar="وصلات غسيل الكلى (AV Fistula)" data-fr="Abords Vasculaires pour Hémodialyse (FAV)">
+                            Dialysis Vascular Access (AV Fistula)
+                        </h3>
+                        <span class="service-subtitle-en">DIALYSIS VASCULAR ACCESS</span>
+                        <p class="service-desc"
+                            data-en="Creation of primary and complex arteriovenous fistulas/grafts for renal dialysis patients, along with endovascular salvage and thrombectomy."
+                            data-ar="إنشاء النواسير الشريانية الوريدية الأولية والمعقدة لمرضى الفشل الكلوي، وتدبير اختلاطات النواسير وصيانتها بالقثطرة التداخلية أو الترقيع لضمان استمرار جلسات الغسيل بأمان."
+                            data-fr="Création de fistules artério-veineuses primaires et complexes, pontages prothétiques et sauvetage endovasculaire des accès de dialyse.">
+                            Creation of primary and complex arteriovenous fistulas/grafts for renal dialysis patients,
+                            along with endovascular salvage and thrombectomy.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Native Arteriovenous Fistula (AVF)"
+                                    data-ar="إنشاء الناسور الشرياني الوريدي الطبيعي (Native AVF)"
+                                    data-fr="Fistule artério-veineuse native (FAV)">Native Arteriovenous Fistula
+                                    (AVF)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Prosthetic Vascular Grafts (AVG)"
+                                    data-ar="زراعة الوصلات الصناعية (AVG) في الحالات المعقدة"
+                                    data-fr="Greffes vasculaires synthétiques (AVG)">Prosthetic Vascular Grafts
+                                    (AVG)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Fistula Angioplasty & Stenosis Repair"
+                                    data-ar="تسريح الخثرات وتوسيع تضيقات الناسور بالقسطرة"
+                                    data-fr="Angioplastie et désobstruction de fistule">Fistula Angioplasty & Stenosis
+                                    Repair</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-diagram-project"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Endovascular Interventions & Stenting"
+                            data-ar="التداخلات الوعائية والقثطرة العلاجية"
+                            data-fr="Interventions Endovasculaires & Stents">
+                            Endovascular Interventions & Stenting
+                        </h3>
+                        <span class="service-subtitle-en">ENDOVASCULAR SURGERY</span>
+                        <p class="service-desc"
+                            data-en="Pinpoint catheter-based interventions inside the blood vessels through microscopic access, enabling faster healing and same-day hospital discharge."
+                            data-ar="إجراءات دقيقة من داخل الوعاء الدموي عبر فتحات متناهية الصغر بواسطة القسطرة، تتيح للمريض سرعة التعافي ومغادرة المستشفى في نفس اليوم."
+                            data-fr="Interventions endovasculaires précises par cathétérisme mini-invasif permettant un rétablissement rapide et une sortie le jour même.">
+                            Pinpoint catheter-based interventions inside the blood vessels through microscopic access,
+                            enabling faster healing and same-day hospital discharge.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Drug-Eluting Balloon Angioplasty"
+                                    data-ar="توسيع الشرايين بالبالونات الدوائية المانعة للتضيق"
+                                    data-fr="Angioplastie par ballonnet actif">Drug-Eluting Balloon Angioplasty</span>
+                            </li>
+                            <li><i class="fas fa-check"></i> <span data-en="Advanced Vascular Stenting (Bare & Covered)"
+                                    data-ar="زراعة الشبكات والدعامات الوعائية المتطورة"
+                                    data-fr="Implantation de stents nus et couverts">Advanced Vascular Stenting (Bare &
+                                    Covered)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Catheter-Directed Thrombus Removal"
+                                    data-ar="إذابة وسحب الجلطات الشريانية والوريدية بالقثطرة"
+                                    data-fr="Thrombectomie et thrombolyse par cathéter">Catheter-Directed Thrombus
+                                    Removal</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon-box">
+                            <i class="fas fa-lungs-virus"></i>
+                        </div>
+                        <h3 class="service-title" data-en="Digestive Oncology & Laparoscopy"
+                            data-ar="أورام الجهاز الهضمي والجراحة التنظيرية"
+                            data-fr="Chirurgie Cœlioscopique & Oncologie">
+                            Digestive Oncology & Laparoscopy
+                        </h3>
+                        <span class="service-subtitle-en">DIGESTIVE SURGERY & LAPAROSCOPY</span>
+                        <p class="service-desc"
+                            data-en="Extensive expertise acquired during French surgical training at Centre Hospitalier de Beauvais in digestive oncology, colectomy, and advanced laparoscopy."
+                            data-ar="خبرة متميزة مستمدة من التدريب الفرنسي بمستشفى بوفيه في جراحة الأحشاء والأورام والجراحة التنظيرية المتقدمة واستئصال المرارة والفتوق المعقدة."
+                            data-fr="Expertise issue de la formation chirurgicale française au CH de Beauvais en oncologie digestive, résections coliques et cœlioscopie avancée.">
+                            Extensive expertise acquired during French surgical training at Centre Hospitalier de
+                            Beauvais in digestive oncology, colectomy, and advanced laparoscopy.
+                        </p>
+                        <ul class="service-features-list">
+                            <li><i class="fas fa-check"></i> <span data-en="Digestive Oncology & Colectomy"
+                                    data-ar="جراحة أورام الجهاز الهضمي واستئصال القولون (Colectomy)"
+                                    data-fr="Chirurgie des cancers digestifs et colectomie">Digestive Oncology &
+                                    Colectomy</span></li>
+                            <li><i class="fas fa-check"></i> <span data-en="Laparoscopic Gallbladder, Hernia & Appendix"
+                                    data-ar="الجراحة التنظيرية للمرارة والفتوق والزائدة الدودية"
+                                    data-fr="Cœlioscopie vésiculaire, hernies et appendice">Laparoscopic Gallbladder,
+                                    Hernia & Appendix</span></li>
+                            <li><i class="fas fa-check"></i> <span
+                                    data-en="Kidney & Liver Transplantation Expertise (Lille 2)"
+                                    data-ar="تدريب متقدم في زراعة الكلى والكبد (جامعة ليل - فرنسا)"
+                                    data-fr="Expertise en greffes rénale et hépatique (Lille 2)">Kidney & Liver
+                                    Transplantation Expertise (Lille 2)</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="service-action-btn">
+                        <span data-en="Book Consultation for this Specialty" data-ar="حجز استشارة لهذا التخصص"
+                            data-fr="Prendre Rendez-vous pour cette Spécialité">Book Consultation for this
+                            Specialty</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       PATENTS & INNOVATIONS
+       ========================================================================== -->
+    <section class="patents-section" id="patents">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Patents & Medical Inventions"
+                    data-ar="الابتكار العلمي وبراءات الاختراع" data-fr="Brevets & Inventions Médicales">Patents &
+                    Medical Inventions</span>
+                <h2 class="section-title" data-en="Internationally Registered Medical Patents"
+                    data-ar="براءات اختراع طبية مسجلة دولياً" data-fr="Brevets Médicaux Déposés à l'International">
+                    Internationally Registered Medical Patents
+                </h2>
+                <p class="section-desc"
+                    data-en="Dr. Mamoun Aldurra is an inventor who has developed precision surgical tools registered with the World Intellectual Property Organization (WIPO/PCT) and the Turkish Patent Office."
+                    data-ar="يُعد الدكتور مأمون الدرة من الجراحين المبتكرين الذين طوروا أدوات جراحية وأنظمة طبية نوعية مسجلة في كبرى مكاتب الملكية الفكرية العالمية (WIPO وتركيا)."
+                    data-fr="Le Dr Mamoun Aldurra est un inventeur médical ayant développé des instruments de pointe brevetés auprès de l'OMPI (PCT) et de l'Office Turc des Brevets.">
+                    Dr. Mamoun Aldurra is an inventor who has developed precision surgical tools registered with the
+                    World Intellectual Property Organization (WIPO/PCT) and the Turkish Patent Office.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Feature Banner on Innovation Presentation -->
+            <div class="patent-banner">
+                <div class="patent-banner-text">
+                    <h3 data-en="<i class='fas fa-lightbulb'></i> Innovations Presented to Global MedTech Leaders"
+                        data-ar="<i class='fas fa-lightbulb'></i> شراكات وابتكارات مع كبرى الشركات العالمية"
+                        data-fr="<i class='fas fa-lightbulb'></i> Innovations Présentées aux Leaders Mondiaux de la MedTech">
+                        <i class="fas fa-lightbulb"></i> Innovations Presented to Global MedTech Leaders
+                    </h3>
+                    <p data-en="Dr. Aldurra developed specialized and precise surgical tools for vascular procedures and presented one key innovation to Boston Scientific, receiving great admiration and interest for its clinical impact on patient safety and surgical precision."
+                        data-ar="قام الدكتور مأمون الدرة بتقديم ابتكاراته وأدواته الجراحية المتخصصة لشركة بوسطن ساينتيفيك العالمية (Boston Scientific)، حيث حظيت بإعجاب كبير واهتمام واسع لفعاليتها في تحسين نتائج العمليات الجراحية وحماية الأنسجة وتوفير وقت الجراحة."
+                        data-fr="Le Dr Aldurra a conçu des instruments chirurgicaux précis présentés à la multinationale Boston Scientific, suscitant une vive admiration pour l'optimisation des temps opératoires et la protection tissulaire.">
+                        Dr. Aldurra developed specialized and precise surgical tools for vascular procedures and
+                        presented one key innovation to Boston Scientific, receiving great admiration and interest for
+                        its clinical impact on patient safety and surgical precision.
+                    </p>
+                </div>
+                <div class="badge-gold">
+                    <i class="fas fa-microchip"></i>
+                    <span data-en="Precision Surgical Tools" data-ar="تطوير أدوات جراحية دقيقة"
+                        data-fr="Instruments Chirurgicaux Précis">Precision Surgical Tools</span>
+                </div>
+            </div>
+
+            <!-- Patents Grid -->
+            <div class="patents-grid">
+
+                <!-- Patent 1: Vascular Retractor -->
+                <div class="patent-card featured-patent">
+                    <div>
+                        <div class="patent-top">
+                            <div class="patent-icon">
+                                <i class="fas fa-toolbox"></i>
+                            </div>
+                            <span class="patent-id-badge">WO2010024785A1</span>
+                        </div>
+
+                        <h3 class="patent-title" data-en="Vascular Retractor (Vascular Anastomosis Aiding Device)"
+                            data-ar="المُباعِد الوعائي الدقيق (Vascular Retractor)"
+                            data-fr="Écarteur Vasculaire de Précision (Aide à l'Anastomose)">
+                            Vascular Retractor (Vascular Anastomosis Aiding Device)
+                        </h3>
+                        <div class="patent-title-en">VASCULAR ANASTOMOSIS AIDING DEVICE</div>
+
+                        <div class="patent-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Mar 4, 2010</span>
+                            <span><i class="fas fa-globe"></i> WIPO / International PCT</span>
+                        </div>
+
+                        <p class="patent-desc"
+                            data-en="A specialized vascular anastomosis aiding device composed of a plastic base with hooked legs made from flexible steel wire extending from it for safely engaging and pulling the vessel wall. Provides optimal exposure of the anastomosis site, prevents vessel wall trauma, and saves precious operative time."
+                            data-ar="أداة جراحية دقيقة لمساعدة مفاغرة الأوعية الدموية (Anastomosis)، تتكون من قاعدة بلاستيكية بأرجل خطافية مصنوعة من أسلاك فولاذية مرنة لمسك وسحب جدار الوعاء الدموي بأمان تام. توفر رؤية جراحية مثالية، وتحمي طبقات جدار الوعاء، وتقلل احتمالية الرض، وتتيح إجراء المفاغرة بنجاح وسرعة حتى للجراحين الأقل خبرة."
+                            data-fr="Dispositif d'aide à l'anastomose vasculaire composé d'une base et de tiges flexibles en acier permettant de saisir et maintenir la paroi vasculaire en toute sécurité, garantissant une exposition optimale et une réduction significative des traumatismes.">
+                            A specialized vascular anastomosis aiding device composed of a plastic base with hooked legs
+                            made from flexible steel wire extending from it for safely engaging and pulling the vessel
+                            wall. Provides optimal exposure of the anastomosis site, prevents vessel wall trauma, and
+                            saves precious operative time.
+                        </p>
+
+                        <div class="patent-impact">
+                            <i class="fas fa-circle-check"></i>
+                            <span
+                                data-en="Clinical Impact: Minimizes vessel trauma, saves time, presented to Boston Scientific."
+                                data-ar="الأثر الطبي: تقليل زمن مفاغرة الأوعية، حماية الأنسجة، وتم عرضه على شركة Boston Scientific."
+                                data-fr="Impact clinique : Protection optimale des parois, gain de temps, présenté à Boston Scientific.">
+                                Clinical Impact: Minimizes vessel trauma, saves time, presented to Boston Scientific.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="patent-footer">
+                        <span class="text-gold"><i class="fas fa-file-pdf"></i> WO2010024785A1.pdf</span>
+                        <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2010024785" target="_blank"
+                            class="patent-link">
+                            <span data-en="View Patent Document" data-ar="وثيقة براءة الاختراع"
+                                data-fr="Document Officiel OMPI">View Patent Document</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Patent 2: Plumbing the Blood Vessels -->
+                <div class="patent-card featured-patent">
+                    <div>
+                        <div class="patent-top">
+                            <div class="patent-icon">
+                                <i class="fas fa-heart-circle-bolt"></i>
+                            </div>
+                            <span class="patent-id-badge">TR 2021066783</span>
+                        </div>
+
+                        <h3 class="patent-title" data-en="Plumbing the Blood Vessels"
+                            data-ar="سباكة وتوصيل الأوعية الدموية (Plumbing the Blood Vessels)"
+                            data-fr="Raccordement Vasculaire d'Urgence">
+                            Plumbing the Blood Vessels
+                        </h3>
+                        <div class="patent-title-en">RAPID EMERGENCY VASCULAR CONNECTION SYSTEM</div>
+
+                        <div class="patent-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Filed: Jan 10, 2020</span>
+                            <span><i class="fas fa-location-dot"></i> Turkey Patent Office</span>
+                        </div>
+
+                        <p class="patent-desc"
+                            data-en="A revolutionary method that shifts emergency vascular surgery from delicate traditional suture anastomosis to rapid modular tube assembling using specialized biomaterials. Designed to save limbs and lives in urgent trauma settings even when a vascular surgeon is unavailable, applicable by any general practitioner."
+                            data-ar="نظام مبتكر يُغير فلسفة الجراحة الوعائية من التعامل مع الأوعية الدموية إلى نظام يشبه توصيل الأنابيب والمواسير الدقيقة باستخدام مواد وتراكيب متطورة لاستبدال الخياطة الجراحية التقليدية. يُحدث هذا الاختراع ثورة في إنقاذ حياة المصابين والأطراف من البتر في حالات الطوارئ والحروب عند عدم توفر جراح أوعية متخصص، حيث يمكن تطبيقه من قِبل أي طبيب عام."
+                            data-fr="Système révolutionnaire substituant les sutures traditionnelles délicates par un assemblage tubulaire modulaire en biomatériaux. Sauve les membres de l'amputation dans les urgences traumatiques même en l'absence de chirurgien vasculaire.">
+                            A revolutionary method that shifts emergency vascular surgery from delicate traditional
+                            suture anastomosis to rapid modular tube assembling using specialized biomaterials. Designed
+                            to save limbs and lives in urgent trauma settings even when a vascular surgeon is
+                            unavailable, applicable by any general practitioner.
+                        </p>
+
+                        <div class="patent-impact">
+                            <i class="fas fa-circle-check"></i>
+                            <span
+                                data-en="Clinical Impact: Prevents amputations in battlefield and civilian emergency trauma."
+                                data-ar="الأثر الطبي: إنقاذ الأطراف من البتر في الحوادث الميدانية والإسعافية السريعة."
+                                data-fr="Impact clinique : Prévention des amputations dans les traumatismes d'urgence.">
+                                Clinical Impact: Prevents amputations in battlefield and civilian emergency trauma.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="patent-footer">
+                        <span class="text-gold"><i class="fas fa-shield-halved"></i> Patented System</span>
+                        <span class="patent-link">Turkey Patent Office</span>
+                    </div>
+                </div>
+
+                <!-- Patent 3: Mask for Patient and People Living with a Virus -->
+                <div class="patent-card">
+                    <div>
+                        <div class="patent-top">
+                            <div class="patent-icon">
+                                <i class="fas fa-head-side-mask"></i>
+                            </div>
+                            <span class="patent-id-badge">TR202107215A2</span>
+                        </div>
+
+                        <h3 class="patent-title" data-en="Antiviral Mask For Infected Patients"
+                            data-ar="كمامة القضاء على الفيروسات للمرضى والمصابين" data-fr="Masque Antiviral Protecteur">
+                            Antiviral Mask For Infected Patients
+                        </h3>
+                        <div class="patent-title-en">MASK FOR PATIENT & VIRUS SPREAD PREVENTION</div>
+
+                        <div class="patent-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: 2021</span>
+                            <span><i class="fas fa-location-dot"></i> Turkey Patent Office</span>
+                        </div>
+
+                        <p class="patent-desc"
+                            data-en="An innovative functional mask designed to neutralize and eradicate viruses emanating from the mouth or nose of an infected patient at source, preventing transmission to medical staff and the surrounding community."
+                            data-ar="كمامة طبية علاجية ووقائية مبتكرة تعمل على القضاء على الفيروسات المنبعثة من فم أو أنف الشخص المصاب فور خروجها، بهدف تحييد العدوى عند المصدر ومنع تفشي الأوبئة والفيروسات التنفسية بين الأفراد المحيطين والكوادر الطبية."
+                            data-fr="Masque médical fonctionnel conçu pour détruire les virus émanant des voies respiratoires d'une personne infectée à la source, protégeant ainsi l'entourage et le personnel soignant.">
+                            An innovative functional mask designed to neutralize and eradicate viruses emanating from
+                            the mouth or nose of an infected patient at source, preventing transmission to medical staff
+                            and the surrounding community.
+                        </p>
+
+                        <div class="patent-impact">
+                            <i class="fas fa-circle-check"></i>
+                            <span
+                                data-en="Clinical Impact: Eliminates airborne viral discharge at source in hospitals and public spaces."
+                                data-ar="الأثر الطبي: قطع سلسلة العدوى الفيروسية التنفسية في المستشفيات والمجتمع."
+                                data-fr="Impact clinique : Neutralisation des agents pathogènes aéroportés à la source.">
+                                Clinical Impact: Eliminates airborne viral discharge at source in hospitals and public
+                                spaces.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="patent-footer">
+                        <span class="text-gold"><i class="fas fa-shield-virus"></i> Virus Eradication</span>
+                        <span class="patent-link">TR202107215A2</span>
+                    </div>
+                </div>
+
+                <!-- Patent 4: The Automatic Car Cover -->
+                <div class="patent-card">
+                    <div>
+                        <div class="patent-top">
+                            <div class="patent-icon">
+                                <i class="fas fa-car-side"></i>
+                            </div>
+                            <span class="patent-id-badge">WO2009136878A1</span>
+                        </div>
+
+                        <h3 class="patent-title" data-en="The Automatic Protective Cover"
+                            data-ar="الغطاء الآلي للسيارات والمرافق" data-fr="Couverture Automatique de Protection">
+                            The Automatic Protective Cover
+                        </h3>
+                        <div class="patent-title-en">AUTOMATIC ROTATIONAL COVERING SYSTEM</div>
+
+                        <div class="patent-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Nov 12, 2009</span>
+                            <span><i class="fas fa-globe"></i> WIPO Patent</span>
+                        </div>
+
+                        <p class="patent-desc"
+                            data-en="An automated protective cover mechanism inspired by the biomechanics of soft tissue twirling around an axle, providing rapid encapsulation, water conservation, and versatile protection for vehicles, roofs, and pools."
+                            data-ar="جهاز مبتكر بحجم حقيبة يثبت على سقف السيارة يلف ويفرغ الغطاء الواقي بشكل آلي وسريع وفق مبدأ مستوحى من حركة والتفاف الأنسجة الرخوة حول المحور، موفراً الوقت والماء وحماية متكاملة، ويمكن توظيفه في تغطية المسابح والأسطح."
+                            data-fr="Mécanisme automatique de couverture protectrice inspiré de la biomécanique d'enroulement des tissus mous, assurant une protection rapide des véhicules et installations.">
+                            An automated protective cover mechanism inspired by the biomechanics of soft tissue twirling
+                            around an axle, providing rapid encapsulation, water conservation, and versatile protection
+                            for vehicles, roofs, and pools.
+                        </p>
+                    </div>
+
+                    <div class="patent-footer">
+                        <span class="text-gold"><i class="fas fa-file-pdf"></i> WO2009136878A1.pdf</span>
+                        <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2009136878" target="_blank"
+                            class="patent-link">
+                            <span data-en="WIPO Document" data-ar="وثيقة WIPO" data-fr="Document OMPI">WIPO
+                                Document</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Patent 5: Optical Translation -->
+                <div class="patent-card">
+                    <div>
+                        <div class="patent-top">
+                            <div class="patent-icon">
+                                <i class="fas fa-book-open-reader"></i>
+                            </div>
+                            <span class="patent-id-badge">WO2007102791A2</span>
+                        </div>
+
+                        <h3 class="patent-title" data-en="Optical Translation System"
+                            data-ar="الترجمة البصرية للمؤلفات والكتب" data-fr="Système de Traduction Optique">
+                            Optical Translation System
+                        </h3>
+                        <div class="patent-title-en">OPTICAL TRANSLATION SYSTEM</div>
+
+                        <div class="patent-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Sep 13, 2007</span>
+                            <span><i class="fas fa-globe"></i> WIPO Patent</span>
+                        </div>
+
+                        <p class="patent-desc"
+                            data-en="An optical translation system designed for printed literature, utilizing advanced recognition to streamline real-time knowledge and linguistic access."
+                            data-ar="نظام تقني وبصري لقراءة وترجمة النصوص والمؤلفات عبر مسح بصري متقدم يسهل الوصول السريع للترجمات والمصادر المعرفية."
+                            data-fr="Système optique de numérisation et de traduction pour documents et ouvrages afin de faciliter l'accès linguistique immédiat.">
+                            An optical translation system designed for printed literature, utilizing advanced
+                            recognition to streamline real-time knowledge and linguistic access.
+                        </p>
+                    </div>
+
+                    <div class="patent-footer">
+                        <span class="text-gold"><i class="fas fa-file-pdf"></i> WO2007102791A2.pdf</span>
+                        <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2007102791" target="_blank"
+                            class="patent-link">
+                            <span data-en="WIPO Document" data-ar="وثيقة WIPO" data-fr="Document OMPI">WIPO
+                                Document</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       WORK EXPERIENCE TIMELINE
+       ========================================================================== -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Career & Clinical Appointments"
+                    data-ar="المحطات المهنية والجراحية" data-fr="Parcours & Fonctions Hospitalières">Career & Clinical
+                    Appointments</span>
+                <h2 class="section-title" data-en="Work Experience & Hospital Leadership"
+                    data-ar="المسيرة المهنية والخبرات في المستشفيات"
+                    data-fr="Expérience Professionnelle et Postes Hospitaliers">
+                    Work Experience & Hospital Leadership
+                </h2>
+                <p class="section-desc"
+                    data-en="A distinguished record of medical leadership and department head positions in leading hospitals across Libya, Syria, and France."
+                    data-ar="سجل حافل بالقيادة الطبية ورئاسة أقسام جراحة الأوعية الدموية في مستشفيات ليبيا وسوريا وفرنسا."
+                    data-fr="Un parcours remarquable de direction médicale et de chef de service hospitalier en Libye, en Syrie et en France.">
+                    A distinguished record of medical leadership and department head positions in leading hospitals
+                    across Libya, Syria, and France.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Experience 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - Present</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgery Consultant & Head of Department"
+                            data-ar="استشاري ورئيس قسم جراحة الأوعية الدموية"
+                            data-fr="Chirurgien Vasculaire Consultant & Chef de Service">
+                            Vascular Surgery Consultant & Head of Department
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> Aljazera International Hospital
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Misurata, Libya
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Leading the vascular surgery department, performing complex vascular surgeries, endovascular interventions, limb salvage, and dialysis access."
+                            data-ar="قيادة قسم جراحة الأوعية الدموية، إجراء أدق العمليات الجراحية والتداخلات الوعائية لإنقاذ الأطراف وعلاج أمراض الشرايين والأوردة والقدم السكرية ونواسير الغسيل الكلوي."
+                            data-fr="Direction du service de chirurgie vasculaire, interventions de revascularisation complexe, sauvetage de membres et abords de dialyse.">
+                            Leading the vascular surgery department, performing complex vascular surgeries, endovascular
+                            interventions, limb salvage, and dialysis access.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2016 - 2019</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgery Consultant & Head of Department"
+                            data-ar="استشاري ورئيس قسم جراحة الأوعية الدموية"
+                            data-fr="Chirurgien Vasculaire Consultant & Chef de Service">
+                            Vascular Surgery Consultant & Head of Department
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> National Cancer Institute
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Misurata, Libya
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Head of the vascular surgery department, handling complex vascular oncological procedures, port-a-cath placements, and tumor-associated vascular resections."
+                            data-ar="رئاسة قسم جراحة الأوعية الدموية، تدبير الحالات الوعائية المعقدة لمرضى الأورام، زراعة الخطوط الوريدية المركزية وجراحات الأوعية المتقدمة المصاحبة لاستئصال الأورام."
+                            data-fr="Chef du service de chirurgie vasculaire, gestion des cas vasculaires oncologiques complexes et abords vasculaires centraux pour chimiothérapie.">
+                            Head of the vascular surgery department, handling complex vascular oncological procedures,
+                            port-a-cath placements, and tumor-associated vascular resections.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2015 - 2016</span>
+                        <h3 class="timeline-role" data-en="Faculty Member of General & Vascular Surgery"
+                            data-ar="عضو هيئة التدريس للجراحة العامة وجراحة الأوعية"
+                            data-fr="Enseignant Universitaire en Chirurgie">
+                            Faculty Member of General & Vascular Surgery
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-building-columns"></i> Tobruk University - Faculty of Medicine
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Tobruk, Libya
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Teaching and mentoring medical students and surgical residents in clinical and surgical vascular principles."
+                            data-ar="تدريس وتدريب طلبة الطب البشري والأطباء المقيمين على المبادئ السريرية والجراحية الدقيقة لأمراض وجراحة الأوعية الدموية والجراحة العامة."
+                            data-fr="Enseignement théorique et clinique de la chirurgie vasculaire et générale aux étudiants en médecine et médecins résidents.">
+                            Teaching and mentoring medical students and surgical residents in clinical and surgical
+                            vascular principles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2012 - 2016</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgeon" data-ar="أخصائي جراحة الأوعية الدموية"
+                            data-fr="Chirurgien Vasculaire">
+                            Vascular Surgeon
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> Tobruk Medical Centre
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Tobruk, Libya
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Specialized vascular surgical care, emergency trauma repair, elective dialysis access, and venous disease management."
+                            data-ar="تقديم الرعاية الجراحية الوعائية المتخصصة، إدارة طوارئ إصابات الأوعية الدموية والعمليات المبرمجة لنواسير الغسيل الكلوي والدوالي."
+                            data-fr="Soins chirurgicaux vasculaires spécialisés, prise en charge des traumatismes vasculaires urgents et chirurgie veineuse.">
+                            Specialized vascular surgical care, emergency trauma repair, elective dialysis access, and
+                            venous disease management.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 5 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2005 - 2012</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgeon" data-ar="أخصائي جراحة الأوعية الدموية"
+                            data-fr="Chirurgien Vasculaire">
+                            Vascular Surgeon
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> Damascus Countryside Specialized Hospital
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Damascus, Syria
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Extensive surgical caseload in vascular interventions, diabetic foot protocols, vascular access, and acute arterial ischemia."
+                            data-ar="إجراء مئات العمليات الجراحية الوعائية الدقيقة، تأسيس برامج تدبير القدم السكرية والوصلات الوعائية وإصابات الشرايين الحادة."
+                            data-fr="Vaste activité chirurgicale en revascularisation, protocoles de pied diabétique et prise en charge des ischémies aiguës.">
+                            Extensive surgical caseload in vascular interventions, diabetic foot protocols, vascular
+                            access, and acute arterial ischemia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 6 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2002 - 2003</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgeon - AFS Specialized Training"
+                            data-ar="طبيب متدرب متخصص في جراحة الأوعية وزراعة الأعضاء (AFS)"
+                            data-fr="Chirurgien Vasculaire - Formation Spécialisée AFS">
+                            Vascular Surgeon - AFS Specialized Training
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-building-columns"></i> University of Lille 2 (CHRU de Lille)
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Lille, Hauts-de-France, France
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Specialized Training Certificate (AFS) in Vascular Surgery, focusing on Kidney and Liver Transplantation and major vascular reconstruction."
+                            data-ar="نيل شهادة التدريب التخصصي العالي (AFS)، والمشاركة في برنامج متقدم في زراعة الكلى والكبد وجراحة الأوعية الدموية الكبرى."
+                            data-fr="Attestation de Formation Spécialisée (AFS) en chirurgie vasculaire, avec participation active au programme de greffes hépatiques et rénales.">
+                            Specialized Training Certificate (AFS) in Vascular Surgery, focusing on Kidney and Liver
+                            Transplantation and major vascular reconstruction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 7 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2001 - 2002</span>
+                        <h3 class="timeline-role" data-en="Visceral & Digestive Laparoscopic Surgery"
+                            data-ar="جراحة الأحشاء والجهاز الهضمي والتنظير وأورام الهضم"
+                            data-fr="Chirurgie Viscérale, Digestive & Cœlioscopie">
+                            Visceral & Digestive Laparoscopic Surgery
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> Centre Hospitalier de Beauvais
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Beauvais, Hauts-de-France, France
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="French surgical fellowship in general digestive surgery, laparoscopy (gallbladder, hernia, appendectomy, hiatal hernia, colectomy, ulcer suture, pneumothorax) and digestive oncology."
+                            data-ar="تدريب جراحي فرنسي مكثف في الجراحة التنظيرية (المرارة، الفتوق، الزائدة، فتق الحجاب الحاجز، استئصال القولون، خياطة القرحة، الاسترواح الصدري) وجراحة أورام الهضم."
+                            data-fr="Formation chirurgicale approfondie en chirurgie digestive, cœlioscopie (vésicule, hernies, appendicectomie, colectomie, suture d'ulcère, pneumothorax) et oncologie digestive.">
+                            French surgical fellowship in general digestive surgery, laparoscopy (gallbladder, hernia,
+                            appendectomy, hiatal hernia, colectomy, ulcer suture, pneumothorax) and digestive oncology.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 8 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">1998 - 2001</span>
+                        <h3 class="timeline-role" data-en="Vascular Surgeon" data-ar="جراح أوعية دموية"
+                            data-fr="Chirurgien Vasculaire">
+                            Vascular Surgeon
+                        </h3>
+                        <div class="timeline-hospital">
+                            <i class="fas fa-hospital"></i> Tishreen Military Hospital
+                        </div>
+                        <div class="timeline-location">
+                            <i class="fas fa-location-dot"></i> Damascus, Syria
+                        </div>
+                        <p class="timeline-desc"
+                            data-en="Handling urgent vascular emergencies, acute trauma reconstructive interventions, and major elective vascular operations."
+                            data-ar="إدارة الحالات الجراحية الإسعافية وإصابات الأوعية الدموية والعمليات الكبرى في واحد من أكبر المشافي المرجعية."
+                            data-fr="Prise en charge des urgences vasculaires majeures, traumatismes vasculaires graves et interventions réparatrices.">
+                            Handling urgent vascular emergencies, acute trauma reconstructive interventions, and major
+                            elective vascular operations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       EDUCATION & BOARD CERTIFICATIONS
+       ========================================================================== -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Academic Qualifications" data-ar="الدرجات العلمية والشهادات"
+                    data-fr="Diplômes & Titres Académiques">Academic Qualifications</span>
+                <h2 class="section-title" data-en="Educational Background & Board Certifications"
+                    data-ar="المؤهلات العلمية والبورد الطبي" data-fr="Formation Académique & Diplômes de Spécialité">
+                    Educational Background & Board Certifications
+                </h2>
+                <p class="section-desc"
+                    data-en="Rigorous academic and surgical training combining the Syrian Board with postgraduate specialty training from premier French medical universities."
+                    data-ar="مسار أكاديمي وجراحي رصين يجمع بين البورد السوري والشهادات التخصصية المتقدمة من كبرى الجامعات الفرنسية."
+                    data-fr="Un parcours académique d'élite alliant le Syrian Board aux formations hospitalo-universitaires spécialisées en France.">
+                    Rigorous academic and surgical training combining the Syrian Board with postgraduate specialty
+                    training from premier French medical universities.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="education-grid">
+
+                <!-- Degree 1 -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-icon-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="edu-years">1997 - 2003</span>
+                        <h3 class="edu-title" data-en="Syrian Board in Vascular Surgery"
+                            data-ar="شهادة البورد السوري في جراحة الأوعية الدموية"
+                            data-fr="Syrian Board en Chirurgie Vasculaire">
+                            Syrian Board in Vascular Surgery
+                        </h3>
+                        <div class="edu-institution">
+                            <i class="fas fa-building-columns"></i> Ministry of Health - Damascus, Syria
+                        </div>
+                        <p class="edu-details"
+                            data-en="Comprehensive Vascular Surgery Residency Program, earning the official Consultant and Specialist accreditation in Vascular Surgery."
+                            data-ar="برنامج الإقامة التخصصي العالي في جراحة الأوعية الدموية (Vascular Surgery Residency Program)، ونيل لقب أخصائي واستشاري جراحة أوعية."
+                            data-fr="Programme supérieur de résidanat en chirurgie vasculaire, conférant le titre de Chirurgien Vasculaire Spécialiste et Consultant.">
+                            Comprehensive Vascular Surgery Residency Program, earning the official Consultant and
+                            Specialist accreditation in Vascular Surgery.
+                        </p>
+                    </div>
+                    <div class="badge-gold" style="margin-top: 1rem;">
+                        <i class="fas fa-medal"></i> Syrian Board
+                    </div>
+                </div>
+
+                <!-- Degree 2 -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-icon-wrap">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="edu-years">2002 - 2003</span>
+                        <h3 class="edu-title" data-en="Specialized Training Certificate (AFS) - Lille 2"
+                            data-ar="شهادة التدريب التخصصي (AFS) - جامعة ليل"
+                            data-fr="Diplôme AFS en Chirurgie Vasculaire - Lille 2">
+                            Specialized Training Certificate (AFS) - Lille 2
+                        </h3>
+                        <div class="edu-institution">
+                            <i class="fas fa-building-columns"></i> Université de Lille 2 - France
+                        </div>
+                        <p class="edu-details"
+                            data-en="Attestation de Formation Spécialisée (AFS) in Vascular Surgery, with advanced training in Kidney and Liver Transplantation."
+                            data-ar="Attestation de Formation Spécialisée (AFS) في جراحة الأوعية الدموية، مع تخصص وورقة بحثية وتدريب في زراعة الكلى والكبد."
+                            data-fr="Attestation de Formation Spécialisée (AFS) en chirurgie vasculaire avec programme de recherche clinique en transplantation rénale et hépatique.">
+                            Attestation de Formation Spécialisée (AFS) in Vascular Surgery, with advanced training in
+                            Kidney and Liver Transplantation.
+                        </p>
+                    </div>
+                    <div class="badge-cyan" style="margin-top: 1rem;">
+                        <i class="fas fa-globe"></i> France - Lille 2
+                    </div>
+                </div>
+
+                <!-- Degree 3 -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-icon-wrap">
+                            <i class="fas fa-notes-medical"></i>
+                        </div>
+                        <span class="edu-years">1992 - 1997</span>
+                        <h3 class="edu-title" data-en="Syrian Board in General Surgery"
+                            data-ar="شهادة البورد السوري في الجراحة العامة"
+                            data-fr="Syrian Board en Chirurgie Générale">
+                            Syrian Board in General Surgery
+                        </h3>
+                        <div class="edu-institution">
+                            <i class="fas fa-building-columns"></i> Ministry of Health - Damascus, Syria
+                        </div>
+                        <p class="edu-details"
+                            data-en="General Surgery Residency Program, mastering abdominal surgery, emergency laparotomy, and foundational surgical oncology."
+                            data-ar="برنامج الإقامة التخصصي في الجراحة العامة (General Surgery Residency Program)، إتقان التدخلات الجراحية البطنية والتنظيرية وحالات الإسعاف والطوارئ."
+                            data-fr="Programme complet de résidanat en chirurgie générale, maîtrise des urgences chirurgicales et de la chirurgie abdominale.">
+                            General Surgery Residency Program, mastering abdominal surgery, emergency laparotomy, and
+                            foundational surgical oncology.
+                        </p>
+                    </div>
+                    <div class="badge-gold" style="margin-top: 1rem;">
+                        <i class="fas fa-medal"></i> Syrian Board
+                    </div>
+                </div>
+
+                <!-- Degree 4 -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-icon-wrap">
+                            <i class="fas fa-user-doctor"></i>
+                        </div>
+                        <span class="edu-years">1986 - 1992</span>
+                        <h3 class="edu-title" data-en="Doctor of Medicine (M.D.)" data-ar="دكتور في الطب البشري (M.D.)"
+                            data-fr="Doctorat en Médecine (M.D.)">
+                            Doctor of Medicine (M.D.)
+                        </h3>
+                        <div class="edu-institution">
+                            <i class="fas fa-building-columns"></i> Damascus University - Faculty of Medicine
+                        </div>
+                        <p class="edu-details"
+                            data-en="Doctor of Medicine degree from the renowned Faculty of Medicine at Damascus University."
+                            data-ar="التخرج من كلية الطب البشري بجامعة دمشق، إحدى أعرق كليات الطب في المنطقة العربية، بمرتبة دكتور في الطب البشري والجراحة."
+                            data-fr="Diplôme de Docteur en Médecine délivré par la prestigieuse Faculté de Médecine de l'Université de Damas.">
+                            Doctor of Medicine degree from the renowned Faculty of Medicine at Damascus University.
+                        </p>
+                    </div>
+                    <div class="badge-gold" style="margin-top: 1rem;">
+                        <i class="fas fa-award"></i> MD Degree
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       PRACTICE LOCATIONS & CLINICS
+       ========================================================================== -->
+    <section class="locations-section" id="locations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" data-en="Clinics & Centers" data-ar="أماكن العمل ومراكز الفحص"
+                    data-fr="Centres Médicaux & Cliniques">Clinics & Centers</span>
+                <h2 class="section-title" data-en="Practice Locations & Hospital Clinics"
+                    data-ar="العيادات ومواقع الممارسة الطبية" data-fr="Lieux d'Exercice & Cliniques">
+                    Practice Locations & Hospital Clinics
+                </h2>
+                <p class="section-desc"
+                    data-en="Dr. Mamoun Aldurra receives patients in premier hospital departments and specialized medical centers across Libya, the UAE, and Syria."
+                    data-ar="يستقبل الدكتور مأمون الدرة المرضى والمراجعين في نخبة من المستشفيات والمراكز التخصصية في ليبيا والإمارات وسوريا."
+                    data-fr="Le Dr Mamoun Aldurra accueille les patients dans des hôpitaux et centres médicaux de premier plan en Libye, aux Émirats et en Syrie.">
+                    Dr. Mamoun Aldurra receives patients in premier hospital departments and specialized medical centers
+                    across Libya, the UAE, and Syria.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="locations-grid">
+
+                <!-- Location 1: Libya -->
+                <div class="location-card">
+                    <div>
+                        <div class="location-flag-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-en="Libya - Misurata" data-ar="دولة ليبيا - مدينة مصراتة"
+                                data-fr="Libye - Misurata">Libya - Misurata</span>
+                        </div>
+                        <h4 data-en="Surgical & Consultation Centers" data-ar="مراكز العمل الجراحي والاستشاري"
+                            data-fr="Centres Chirurgicaux et Consultations">Surgical & Consultation Centers</h4>
+                        <ul class="location-facilities-list">
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-hospital text-gold"></i> Aljazera
+                                    International Hospital</div>
+                                <div class="facility-address">Misurata - Head of Vascular Surgery Department</div>
+                            </li>
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-hospital text-gold"></i> Ceptar Hospital
+                                </div>
+                                <div class="facility-address">Misurata - Specialized Vascular Clinics</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/218911694229" target="_blank" class="location-contact-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-en="Contact Libya Clinic (+218 911 694 229)"
+                            data-ar="حجز فرع ليبيا (+218 911 694 229)"
+                            data-fr="Clinique de Libye (+218 911 694 229)">Contact Libya Clinic (+218 911 694
+                            229)</span>
+                    </a>
+                </div>
+
+                <!-- Location 2: UAE -->
+                <div class="location-card">
+                    <div>
+                        <div class="location-flag-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-en="UAE - Sharjah" data-ar="الإمارات العربية المتحدة - الشارقة"
+                                data-fr="É.A.U. - Charjah">UAE - Sharjah</span>
+                        </div>
+                        <h4 data-en="Specialized Medical Center" data-ar="المركز الطبي المعتمد"
+                            data-fr="Centre Médical Partenaire">Specialized Medical Center</h4>
+                        <ul class="location-facilities-list">
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-clinic-medical text-gold"></i> Al Amal
+                                    Medical Centre</div>
+                                <div class="facility-address">Sharjah - Al Ittihad Street</div>
+                            </li>
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-clock text-gold"></i> Scheduled Day-Case
+                                    Interventions</div>
+                                <div class="facility-address">By appointment during regular visits</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="location-contact-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        <span data-en="Request Sharjah Appointment" data-ar="طلب حجز في فرع الشارقة"
+                            data-fr="Demande de RDV à Charjah">Request Sharjah Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Location 3: Syria - Damascus -->
+                <div class="location-card">
+                    <div>
+                        <div class="location-flag-badge">
+                            <i class="fas fa-location-dot"></i>
+                            <span data-en="Syria - Damascus" data-ar="الجمهورية العربية السورية - دمشق"
+                                data-fr="Syrie - Damas">Syria - Damascus</span>
+                        </div>
+                        <h4 data-en="Specialized Clinics in Damascus" data-ar="العيادات التخصصية بدمشق وريفها"
+                            data-fr="Cliniques Spécialisées à Damas">Specialized Clinics in Damascus</h4>
+                        <ul class="location-facilities-list">
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-building text-gold"></i> Damascus Clinic -
+                                    Al-Bahsa</div>
+                                <div class="facility-address">Opposite Victoria Bridge - Al Moustakbal Tower, 1st Floor
+                                </div>
+                            </li>
+                            <li class="facility-item">
+                                <div class="facility-name"><i class="fas fa-building text-gold"></i> Douma Clinic -
+                                    Damascus Countryside</div>
+                                <div class="facility-address">Khorshid Street - Khayateen Lane, 1st Floor</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/963969127243" target="_blank" class="location-contact-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-en="Contact Syria Clinic (+963 969 127 243)"
+                            data-ar="حجز فرع سوريا (+963 969 127 243)"
+                            data-fr="Clinique de Syrie (+963 969 127 243)">Contact Syria Clinic (+963 969 127
+                            243)</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       APPOINTMENT BOOKING & CONTACT SYSTEM
+       ========================================================================== -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-card">
+                <div class="booking-grid">
+
+                    <!-- Contact Info -->
+                    <div class="booking-info">
+                        <div class="badge-gold">
+                            <i class="fas fa-calendar-days"></i>
+                            <span data-en="Direct Online Booking System" data-ar="نظام الحجز الإلكتروني المباشر"
+                                data-fr="Système de Réservation Direct">Direct Online Booking System</span>
+                        </div>
+                        <h3 data-en="Schedule Your Specialist Consultation" data-ar="احجز استشارتك الطبية التخصصية"
+                            data-fr="Prendre une Consultation Spécialisée">
+                            Schedule Your Specialist Consultation
+                        </h3>
+                        <p data-en="Book an in-person clinical appointment at your nearest hospital or request a remote medical consultation with Dr. Mamoun Aldurra."
+                            data-ar="يمكنك حجز موعد فحص سريري في العيادة أو طلب استشارة طبية متخصصة ومناقشة التقارير عبر القنوات الرسمية المعتمدة."
+                            data-fr="Prenez rendez-vous pour un examen clinique ou sollicitez un avis médical spécialisé avec le Dr Mamoun Aldurra.">
+                            Book an in-person clinical appointment at your nearest hospital or request a remote medical
+                            consultation with Dr. Mamoun Aldurra.
+                        </p>
+
+                        <div class="contact-channels">
+                            <div class="contact-row">
+                                <div class="contact-icon-box">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 data-en="Libya Clinic WhatsApp (Misurata)" data-ar="واتساب عيادة ليبيا (مصراتة)"
+                                        data-fr="WhatsApp Libye (Misurata)">Libya Clinic WhatsApp (Misurata)</h5>
+                                    <a href="https://wa.me/218911694229" target="_blank">+218 911 694 229</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-row">
+                                <div class="contact-icon-box">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 data-en="Syria & UAE Clinic WhatsApp" data-ar="واتساب عيادة سوريا والشارقة"
+                                        data-fr="WhatsApp Syrie & É.A.U.">Syria & UAE Clinic WhatsApp</h5>
+                                    <a href="https://wa.me/963969127243" target="_blank">+963 969 127 243</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-row">
+                                <div class="contact-icon-box">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 data-en="Direct Email" data-ar="البريد الإلكتروني المباشر"
+                                        data-fr="Email Direct">Direct Email</h5>
+                                    <a href="mailto:mamoun543211@gmail.com">mamoun543211@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-row">
+                                <div class="contact-icon-box">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 data-en="LinkedIn Profile" data-ar="الملف المهني لينكد إن"
+                                        data-fr="Profil Professionnel LinkedIn">LinkedIn Profile</h5>
+                                    <a href="https://www.linkedin.com/in/dr-mamoun-aldurra"
+                                        target="_blank">linkedin.com/in/dr-mamoun-aldurra</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary open-brochure-btn" style="width: 100%;">
+                            <i class="fas fa-image"></i>
+                            <span data-en="View Full Clinic Brochure & Credentials"
+                                data-ar="استعراض بروشور العيادة والمعلومات الكاملة"
+                                data-fr="Voir la Brochure Complète & Diplômes">View Full Clinic Brochure &
+                                Credentials</span>
+                        </button>
+                    </div>
+
+                    <!-- Booking Interactive Form -->
+                    <div>
+                        <form class="booking-form" id="bookingForm">
+                            <div class="form-group-row">
+                                <div class="form-field">
+                                    <label for="patientName" data-en="Patient Full Name *"
+                                        data-ar="اسم المريض بالكامل *" data-fr="Nom Complet du Patient *">Patient Full
+                                        Name *</label>
+                                    <input type="text" id="patientName" placeholder="Full Name"
+                                        data-en-placeholder="Full Name" data-ar-placeholder="الاسم الثلاثي"
+                                        data-fr-placeholder="Nom et prénom" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="patientPhone" data-en="Phone / WhatsApp Number *"
+                                        data-ar="رقم الهاتف / الواتساب *" data-fr="Téléphone / WhatsApp *">Phone /
+                                        WhatsApp Number *</label>
+                                    <input type="tel" id="patientPhone" placeholder="+218 / +963 / +971..."
+                                        data-en-placeholder="+218 / +963 / +971..."
+                                        data-ar-placeholder="+218 / +963 / +971..."
+                                        data-fr-placeholder="+218 / +963 / +971..." required>
+                                </div>
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-field">
+                                    <label for="clinicLocation" data-en="Preferred Clinic Branch"
+                                        data-ar="الفرع أو المركز المطلوب" data-fr="Centre Médical Souhaité">Preferred
+                                        Clinic Branch</label>
+                                    <select id="clinicLocation">
+                                        <option value="Aljazera International Hospital - Misurata, Libya">Aljazera
+                                            International Hospital - Misurata, Libya</option>
+                                        <option value="Ceptar Hospital - Misurata, Libya">Ceptar Hospital - Misurata,
+                                            Libya</option>
+                                        <option value="Al Amal Medical Centre - Sharjah, UAE">Al Amal Medical Centre -
+                                            Sharjah, UAE</option>
+                                        <option value="Damascus Clinic (Al-Bahsa - Tower), Syria">Damascus Clinic
+                                            (Al-Bahsa - Tower), Syria</option>
+                                        <option value="Douma Clinic (Khorshid Street), Syria">Douma Clinic (Khorshid
+                                            Street), Syria</option>
+                                        <option value="Remote Medical Consultation (Online)">Remote Medical Consultation
+                                            (Online)</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="medicalSpecialty" data-en="Medical Condition / Specialty"
+                                        data-ar="نوع الحالة أو التخصص" data-fr="Spécialité / Motif">Medical Condition /
+                                        Specialty</label>
+                                    <select id="medicalSpecialty">
+                                        <option value="Varicose Veins Treatment (Laser / RFA / Sclerotherapy)">Varicose
+                                            Veins Treatment (Laser / RFA / Sclerotherapy)</option>
+                                        <option value="Diabetic Foot Care & Limb Salvage">Diabetic Foot Care & Limb
+                                            Salvage</option>
+                                        <option value="Peripheral Arterial Disease & Angioplasty">Peripheral Arterial
+                                            Disease & Angioplasty</option>
+                                        <option value="Dialysis Vascular Access (AV Fistula)">Dialysis Vascular Access
+                                            (AV Fistula)</option>
+                                        <option value="Carotid Artery Surgery / Aneurysm">Carotid Artery Surgery /
+                                            Aneurysm</option>
+                                        <option value="Digestive Oncology or Laparoscopy">Digestive Oncology or
+                                            Laparoscopy</option>
+                                        <option value="General Surgical Consultation">General Surgical Consultation
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="preferredDate" data-en="Preferred Appointment Date"
+                                    data-ar="الموعد أو التاريخ المفضل" data-fr="Date Souhaitée">Preferred Appointment
+                                    Date</label>
+                                <input type="date" id="preferredDate">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="patientNotes" data-en="Symptoms / Medical History Notes"
+                                    data-ar="وصف موجز للأعراض أو الفحوصات السابقة"
+                                    data-fr="Description des symptômes / Antécédents">Symptoms / Medical History
+                                    Notes</label>
+                                <textarea id="patientNotes"
+                                    placeholder="Please describe symptoms, prior vascular Doppler reports, or relevant medical details..."
+                                    data-en-placeholder="Please describe symptoms, prior vascular Doppler reports, or relevant medical details..."
+                                    data-ar-placeholder="يرجى كتابة أية تفاصيل تفيد في تقييم الحالة وتحديد الإجراء الأنسب..."
+                                    data-fr-placeholder="Veuillez décrire brièvement vos symptômes ou examens antérieurs..."></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                <span data-en="Send Booking Request via WhatsApp"
+                                    data-ar="إرسال طلب الحجز فوراً عبر واتساب العيادة"
+                                    data-fr="Envoyer la Demande via WhatsApp">Send Booking Request via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       BROCHURE & CERTIFICATES MODAL LIGHTBOX
+       ========================================================================== -->
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" aria-label="Close Modal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-header">
+                <h3 data-en="Dr. Mamoun Aldurra - Medical Center Brochure" data-ar="بروشور وبيانات مركز د. مأمون الدرة"
+                    data-fr="Brochure Officielle du Centre Médical">
+                    Dr. Mamoun Aldurra - Medical Center Brochure
+                </h3>
+                <p data-en="Center for Vascular Diagnosis and Surgery - Over 20 Years of Experience"
+                    data-ar="مركز تشخيص وعلاج أمراض الأوعية الدموية - خبرة جراحية تتجاوز 20 عاماً"
+                    data-fr="Centre de Diagnostic et Chirurgie Vasculaire - Plus de 20 Ans d'Expérience">
+                    Center for Vascular Diagnosis and Surgery - Over 20 Years of Experience
+                </p>
+            </div>
+
+            <img src="Cover.png" alt="Dr Mamoun Brochure Full" class="modal-image-preview">
+
+            <div class="hero-cta-group" style="justify-content: center;">
+                <a href="Cover.png" download="Dr_Mamoun_Aldurra_Brochure.png" class="btn-primary">
+                    <i class="fas fa-download"></i>
+                    <span data-en="Download Original Brochure" data-ar="تحميل نسخة البروشور الأصلية"
+                        data-fr="Télécharger la Brochure">Download Original Brochure</span>
+                </a>
+                <a href="https://wa.me/218911694229" target="_blank" class="btn-whatsapp">
                     <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1Bo6qx3GhV" target="_blank" class="social-icon"
-                    aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
+                    <span data-en="Contact Clinic Coordinator" data-ar="تواصل مع منسق العيادة"
+                        data-fr="Contacter le Coordinateur">Contact Clinic Coordinator</span>
                 </a>
             </div>
+        </div>
+    </div>
 
-            <!-- Footer -->
-            <div class="footer animate-in">
-                &copy; 2026 Dr. Mamoun Aldurra. All rights reserved.
+    <!-- Floating WhatsApp Quick Button -->
+    <a href="https://wa.me/218911694229" target="_blank" class="floating-whatsapp" aria-label="WhatsApp Contact">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Col 1 -->
+                <div class="footer-brand">
+                    <img id="footerLogoImg" src="logo-en.png" class="logo-en" alt="Dr. Mamoun Aldurra Logo">
+                    <p data-en="Dr. Mamoun Aldurra, Consultant Vascular Surgeon, holder of the Syrian Board and French AFS degree from the University of Lille 2, and international medical inventor."
+                        data-ar="الدكتور مأمون الدرة، استشاري جراحة الأوعية الدموية والجراحة العامة، حاصل على البورد السوري وشهادة AFS من جامعة ليل بفرنسا، ومخترع حائز على براءات اختراع دولية مسجلة."
+                        data-fr="Dr. Mamoun Aldurra, Chirurgien Vasculaire Consultant, titulaire de l'AFS de l'Université de Lille 2 et du Syrian Board, inventeur de dispositifs médicaux brevetés.">
+                        Dr. Mamoun Aldurra, Consultant Vascular Surgeon, holder of the Syrian Board and French AFS
+                        degree from the University of Lille 2, and international medical inventor.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/dr-mamoun-aldurra" target="_blank" class="social-btn"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/218911694229" target="_blank" class="social-btn" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Bo6qx3GhV" target="_blank" class="social-btn"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:mamoun543211@gmail.com" class="social-btn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4 data-en="Quick Navigation" data-ar="أقسام الموقع" data-fr="Navigation Rapide">Quick Navigation
+                    </h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero"><i class="fas fa-angle-right"></i> <span data-en="Home" data-ar="الرئيسية"
+                                    data-fr="Accueil">Home</span></a></li>
+                        <li><a href="#about"><i class="fas fa-angle-right"></i> <span data-en="About Dr. Mamoun"
+                                    data-ar="عن الطبيب" data-fr="À Propos du Dr Mamoun">About Dr. Mamoun</span></a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> <span data-en="Specialties"
+                                    data-ar="التخصصات والخدمات" data-fr="Spécialités">Specialties</span></a></li>
+                        <li><a href="#patents"><i class="fas fa-angle-right"></i> <span data-en="Patents & Inventions"
+                                    data-ar="براءات الاختراع والابتكارات" data-fr="Brevets & Inventions">Patents &
+                                    Inventions</span></a></li>
+                        <li><a href="#experience"><i class="fas fa-angle-right"></i> <span data-en="Career Timeline"
+                                    data-ar="المسيرة المهنية" data-fr="Parcours Professionnel">Career
+                                    Timeline</span></a></li>
+                        <li><a href="#education"><i class="fas fa-angle-right"></i> <span data-en="Education & Board"
+                                    data-ar="المؤهلات والبورد" data-fr="Titres & Diplômes">Education & Board</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4 data-en="Featured Treatments" data-ar="أبرز الخدمات" data-fr="Traitements Clés">Featured
+                        Treatments</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Laser Varicose Vein Ablation" data-ar="علاج دوالي الساقين بالليزر"
+                                    data-fr="Ablation des varices par laser">Laser Varicose Vein Ablation</span></a>
+                        </li>
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Diabetic Foot Limb Salvage" data-ar="إنقاذ أطراف القدم السكرية"
+                                    data-fr="Sauvetage du pied diabétique">Diabetic Foot Limb Salvage</span></a></li>
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Dialysis AV Fistula Surgery" data-ar="وصلات غسيل الكلى (AVF)"
+                                    data-fr="Fistules artério-veineuses">Dialysis AV Fistula Surgery</span></a></li>
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Endovascular Angioplasty & Stenting" data-ar="توسيع الشرايين بالقثطرة"
+                                    data-fr="Angioplastie et stents vasculaires">Endovascular Angioplasty &
+                                    Stenting</span></a></li>
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Carotid Endarterectomy" data-ar="جراحة الشريان السباتي"
+                                    data-fr="Chirurgie carotidienne">Carotid Endarterectomy</span></a></li>
+                        <li><a href="#services"><i class="fas fa-check text-gold"></i> <span
+                                    data-en="Laparoscopy & Digestive Oncology" data-ar="الجراحة التنظيرية وأورام الهضم"
+                                    data-fr="Cœlioscopie et oncologie digestive">Laparoscopy & Digestive
+                                    Oncology</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4 data-en="Official Contacts" data-ar="بيانات التواصل الرسمية" data-fr="Contacts Officiels">
+                        Official Contacts</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+218911694229"><i class="fas fa-phone text-gold"></i> <span dir="ltr">+218 911
+                                    694 229</span> (Libya)</a></li>
+                        <li><a href="tel:+963969127243"><i class="fas fa-phone text-gold"></i> <span dir="ltr">+963 969
+                                    127 243</span> (Syria)</a></li>
+                        <li><a href="mailto:mamoun543211@gmail.com"><i class="fas fa-envelope text-gold"></i>
+                                mamoun543211@gmail.com</a></li>
+                        <li><a href="#locations"><i class="fas fa-location-dot text-gold"></i> Misurata (Libya) |
+                                Sharjah (UAE) | Damascus (Syria)</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-        </div> <!-- End container -->
-    </div> <!-- End Section 1 -->
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Dr. Mamoun Aldurra - All rights reserved.
+                </div>
+                <div class="designer-credit" dir="ltr"
+                    style="direction: ltr; display: inline-flex; align-items: center; gap: 8px;">
+                    <span data-en="Designed by" data-ar="Designed by" data-fr="Designed by">Designed by</span>
+                    <a href="https://www.behance.net/itz_omar98" target="_blank" rel="noopener noreferrer">
+                        <img src="designer-signature.png" alt="itz_omar98" class="designer-signature-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- SECTION 2: Cover Image -->
-    <div class="section section-cover">
-        <img src="cover.png" alt="Clinical Cover Image">
-    </div>
-
-    <!-- SECTION 3: Large Logo Centered -->
-    <div class="section section-logo">
-        <img src="logo.png" alt="Dr. Mamoun Aldurra Logo Large">
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set the target date: March 1, 2025 00:00:00
-            let targetDate = new Date('2025-03-01T00:00:00').getTime();
-
-            // If date is passed, set to next month's 1st
-            const now = new Date().getTime();
-            if (now > targetDate) {
-                const currentDate = new Date();
-                // Move to next month
-                let nextMonth = currentDate.getMonth() + 1;
-                let year = currentDate.getFullYear();
-
-                if (nextMonth > 11) {
-                    nextMonth = 0;
-                    year++;
-                }
-
-                targetDate = new Date(year, nextMonth, 1).getTime();
-            }
-
-            // Update timer every second
-            const timerInterval = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = targetDate - now;
-
-                if (distance < 0) {
-                    // Timer finished
-                    clearInterval(timerInterval);
-                    document.getElementById('countdown').innerHTML = '<div class="coming-soon-text" style="font-size:2rem;">Welcome</div>';
-                    return;
-                }
-
-                // Calculations
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Update DOM elements
-                updateElement('days', days);
-                updateElement('hours', hours);
-                updateElement('minutes', minutes);
-                updateElement('seconds', seconds);
-
-            }, 1000);
-
-            function updateElement(id, value) {
-                const el = document.getElementById(id);
-                // Pad with zero if needed
-                const formattedValue = value < 10 ? '0' + value : value;
-
-                // Only animate if value changed
-                if (el.innerText !== formattedValue.toString()) {
-                    el.style.opacity = 0;
-                    setTimeout(() => {
-                        el.innerText = formattedValue;
-                        el.style.opacity = 1;
-                    }, 200);
-                }
-            }
-            // Check if video loaded, if error hide video show gradient fallback
-            const video = document.getElementById('bg-video');
-            video.addEventListener('error', function () {
-                document.body.classList.add('no-video-bg');
-                video.style.display = 'none';
-            });
-
-            // Also check if source is missing/empty
-            const source = video.querySelector('source');
-            source.addEventListener('error', function () {
-                console.log('Video source error');
-            });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 
 </html>
